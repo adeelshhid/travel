@@ -1,0 +1,35 @@
+<ion-content  class="ion-padding no-scroll">
+  <p class="create-account">
+    Create an account
+  </p>
+  <ion-label class="continue-with">
+    Continue with
+  </ion-label>
+  <div class="google">
+    <ion-icon name="logo-google" class="logo-google"></ion-icon>
+    <ion-label class="label-google">Google</ion-label>
+  </div>
+
+  <div class="facebook">
+    <ion-icon name="logo-facebook" class="logo-google"></ion-icon>
+    <ion-label class="label-facebook">Facebook</ion-label>
+  </div>
+
+  <div class="apple">
+    <ion-icon name="logo-apple" class="logo-google"></ion-icon>
+    <ion-label class="label-apple">Apple</ion-label>
+  </div>
+
+  <p class="enter-email">
+    OR ENTER YOUR EMAIL ADDRESS
+  </p>
+
+  <div class="input-field">
+    <ion-input placeholder="Email adress" class="atom-input" type="email" ngModel email></ion-input>
+  </div>
+
+  <p class="login">
+    Already have an account? <a [routerLink]="['/home/login']">Log In</a>
+  </p>
+
+</ion-content>

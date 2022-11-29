@@ -1,0 +1,7 @@
+{
+  "name": "guestApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

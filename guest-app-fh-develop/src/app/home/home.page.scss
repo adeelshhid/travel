@@ -1,0 +1,38 @@
+.logo {
+  box-sizing: border-box;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  left: 143px;
+  top: 191px;
+  border: 1px solid #C2C3CA;
+  border-radius: 2px;
+}
+
+.name {
+  width: 397px;
+  height: 202px;
+  left: 13px;
+  top: 472px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 74px;
+  line-height: 101px;
+  color: #1E1D20;
+}
+
+.home-button {
+  position: absolute;
+  left: 32.27%;
+  right: 32%;
+  top: 98.28%;
+  bottom: 1.11%;
+  background: #000000;
+  border-radius: 100px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

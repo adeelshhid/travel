@@ -1,0 +1,170 @@
+.create-account {
+    position: absolute;
+    width: 197px;
+    height: 33px;
+    left: 15px;
+    top: 255px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 33px;
+    color: #1E1D20;
+}
+
+.continue-with {
+    position: absolute;
+    width: 80px;
+    height: 14px;
+    left: 15px;
+    top: 316px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    color: #1E1D20;
+}
+
+.google {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 15px;
+    top: 349px;
+    border: 1px solid #C2C3CA;
+    border-radius: 2px;
+}
+
+.facebook {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 121px;
+    top: 349px;
+    border: 1px solid #C2C3CA;
+    border-radius: 4px;
+}
+
+.apple {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 227px;
+    top: 349px;
+    border: 1px solid #C2C3CA;
+    border-radius: 2px;
+}
+
+.logo-google {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40%;
+}
+
+.label-google {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    height: 16px;
+    left: 40px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1E1D20;
+}
+
+.label-facebook {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 54px;
+    height: 16px;
+    left: 139px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1E1D20;
+}
+
+.label-apple {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 33px;
+    height: 16px;
+    left: 256px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1E1D20;
+}
+
+.enter-email {
+    position: absolute;
+    width: 170px;
+    height: 14px;
+    left: 15px;
+    top: 468px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    color: #1E1D20;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 345px;
+    height: 40px;
+    left: 15px;
+    top: 500px;
+}
+
+.atom-input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0px 10px 8px;
+    gap: 8px;
+    width: 345px;
+    height: 40px;
+    background: rgba(237, 239, 239, 0.01);
+    box-shadow: 0px 1px 0px rgba(24, 45, 54, 0.2);
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.login {
+    position: absolute;
+    width: 181px;
+    height: 16px;
+    left: 15px;
+    top: 580px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #94959C;
+}
