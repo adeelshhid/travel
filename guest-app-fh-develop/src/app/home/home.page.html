@@ -1,4 +1,4 @@
-<ion-content class="ion-padding">
+<!-- <ion-content class="ion-padding">
   <div class="logo">
     logo
   </div>
@@ -9,4 +9,308 @@
   </div>
 </ion-content>  
 
-<div class="home-button"></div>
+<div class="home-button"></div> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <!-- landing-page -->
+  <ion-modal  id="landing" class="my-custom-modal" isOpen="true">
+
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar class="ion-no-border">
+          <ion-buttons slot="end">
+            <ion-button (click)="next('close')">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="main ion-padding">
+        <img src="../../assets/icon/position.png" alt="">
+        <p>
+          To continue,<br>
+          let us know your status
+        </p>
+        <ion-item (click)="next('i-am-here')" lines="none" detail="true" id="i-am-here">
+          <div>
+            <b>I'm here</b> 
+            <span>Checked-in and got my room number</span>
+          </div>
+        </ion-item>
+        <ion-item  (click)="next('i-am-coming')" lines="none" detail="true" id="i-am-coming">
+          <div>
+            <b>I'm coming</b>
+            <span>Arriving today or in a couple of days</span>
+          </div>
+        </ion-item>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <!-- i am here -->
+  <ion-modal id="i-am-here" class="my-custom-modal1">
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button id="landing" (click)="next('landing')">
+              <ion-icon name="chevron-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="next('close')">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="main ion-padding">
+        <form [formGroup]="authForm">
+          <div class="logo">
+
+            <img src="../../assets/icon/position.png">
+            <ion-label class="fw600">I'm here</ion-label>
+          </div>
+
+          <div class="inputs-div">
+            <ion-item lines="full">
+              <ion-label> Room Number</ion-label>
+              <ion-input type="text" placeholder="Type number" formControlName="typeNum"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label> Booking Last Name</ion-label>
+              <ion-input type="text" placeholder="Type last name" formControlName="name"></ion-input>
+            </ion-item>
+          </div>
+          <div class="bottom-btn">
+            <ion-button (click)="next('verifying')" [disabled]="!authForm.valid" fill="clear">
+              Verify
+            </ion-button>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+
+  </ion-modal>
+
+
+  <!-- i am coming -->
+  <ion-modal id="i-am-coming" isOpen="false" class="my-custom-modal1">
+    <ng-template>
+
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button id="landing" (click)="next('landing')">
+              <ion-icon name="chevron-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="next('close')">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="main ion-padding">
+        <form [formGroup]="authForm2">
+          <div class="logo">
+
+            <img src="../../assets/icon/foot.png">
+            <ion-label class="fw600">I'm coming</ion-label>
+          </div>
+
+          <div class="inputs-div">
+            <ion-item lines="full">
+              <ion-label class="ion-text-wrap"> Booking confirmation Number</ion-label>
+              <ion-input type="text" placeholder="Type number" formControlName="typeNum2"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label> Booking Last Name</ion-label>
+              <ion-input type="text" placeholder="Type last name" formControlName="name2"></ion-input>
+            </ion-item>
+          </div>
+          <div class="bottom-btn">
+            <ion-button [disabled]="!authForm2.valid" (click)="next('req')" fill="clear">
+              Verify
+            </ion-button>
+            <br> <br>
+            <a href="" style="color: black !important;">i don't have a booking confirmation</a>
+          </div>
+
+        </form>
+      </div>
+
+    </ng-template>
+  </ion-modal>
+
+
+  <!-- send request -->
+  <ion-modal id="req" isOpen="false" class="my-custom-modal1">
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button id="landing" (click)="next('landing')">
+              <ion-icon name="chevron-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="next('close')">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="main ion-padding">
+        <form [formGroup]="authForm3">
+          <div class="top-labels">
+            <ion-label class="green">No worries</ion-label>
+            <ion-label>Where did you book this trip?</ion-label>
+          </div>
+          <br>
+          <div class="inputs-div mt20">
+            <ion-item class="mb10" lines="full">
+              <ion-label> Enter your travel agent </ion-label>
+              <ion-input type="text" placeholder="Type travel agent" formControlName="typeNum3"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label> Booking Last Name</ion-label>
+              <ion-input type="text" placeholder="Type last name" formControlName="name3"></ion-input>
+            </ion-item>
+          </div>
+          <div class="bottom-btn mt20">
+            <ion-button (click)="next('sending')" [disabled]="!authForm3.valid" fill="clear">
+              Send Request
+            </ion-button>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <!-- verifying -->
+  <ion-modal id="verifying" class="my-custom-modal">
+    <ng-template>
+      <div class="main fw600 v-center">
+        <img src="../../assets/icon/position.png" alt="">
+        <span *ngIf="!isVerified">Verifying...</span>
+        <span class="h-center green" *ngIf="isVerified">Verified&nbsp;<img class="h20" src="../../assets/icon/Group.png" alt=""></span>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <!-- Dark Modal` -->
+  <ion-modal id="dark" class="my-custom-modal-dark">
+    <ng-template>
+      <div class="main ion-padding">
+        <img class="dp" src="../../assets/icon/pr.jpg" alt="">
+
+        <div class="mv20">
+          <b>Hi FirstName,</b><br><br>
+          <span>
+            You can start your Maldives trip now!
+            No payment required, just one click to book food and exciting events. All your booking orders will be
+            settled upon check out.
+          </span>
+        </div>
+        <div class="user-data mv10">
+          <span>Name</span>
+          <span>Adeel Shahid</span>
+        </div>
+        <div class="user-data mv10">
+          <span>Confirmation No.</span>
+          <b class="f14">73058603</b>
+        </div>
+        <div class="user-data mv10">
+          <span>Room Number</span>
+          <b class="f14">203</b>
+        </div>
+        <ng-container *ngIf="showMore">
+          <div class="user-data mv10">
+            <span>Room Type</span>
+            <span>1 Double Standard</span>
+          </div>
+          <div class="user-data mv10">
+            <span>Island Location</span>
+            <span>Royal Island</span>
+          </div>
+          <div class="user-data mv10">
+            <span>Check-In</span>
+            <span>{{date1 | date:'mediumDate'}}</span>
+          </div>
+          <div class="user-data mv10">
+            <span>Check-Out</span>
+            <span>{{date2 | date:'mediumDate'}}</span>
+          </div>
+          <div class="user-data mv10">
+            <span>Email Address</span>
+            <span>Adeel.Shhid@gmail.com</span>
+          </div>
+        </ng-container>
+        <br>
+        <img (click)="show()" *ngIf="!showMore" class="mv10" src="../../assets/icon/More-info.png" alt="">
+        <ion-button (click)="next('close')" expand="block" fill="clear">
+          Enjoy Now!
+        </ion-button>
+
+      </div>
+    </ng-template>
+  </ion-modal>
+
+
+  <!-- sending -->
+  <ion-modal id="sending" class="my-custom-modal">
+    <ng-template>
+      <div class="main fw600 v-center">
+        <img class="hw40" src="../../assets/icon/send.png" alt="">
+        <span>Sending...</span>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+  <!-- request sent -->
+  <ion-modal id="sent" class="my-custom-modal">
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar class="ion-no-border">
+          <ion-buttons slot="start">
+            <ion-button (click)="next('landing')">
+              <ion-icon name="chevron-back"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button (click)="next('close')">
+              <ion-icon name="close"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <div class="main ion-padding">
+        <span class="fw600">
+          We have sent your request to
+          <span class="green">Travel Agent 1</span>
+        </span>
+        <br>
+        <p class="f16">
+          You will receive an email with a booking number from the agent. Usually it will take 2 minutes to receive the
+          response.
+        </p>
+        <br> <br> <br>
+        <p>Please check the email address of your order.</p>
+      </div>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
