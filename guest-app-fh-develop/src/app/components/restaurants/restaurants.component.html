@@ -1,0 +1,47 @@
+<div class="bottom-main-div">
+  <div class="filters-div ion-padding">
+    <div class="fd-row">
+      <ion-label>All Filter</ion-label>
+      <ion-label class="padding-left"> |</ion-label>
+    </div>
+    <div>
+      <ion-label>Price</ion-label>
+      <ion-icon name="chevron-down"></ion-icon>
+    </div>
+    <div>
+      <ion-label>Distance</ion-label>
+      <ion-icon name="chevron-down"></ion-icon>
+    </div>
+    <div>
+      <ion-label>Open Now</ion-label>
+    </div>
+    <div>
+      <ion-label>Can Pick Up</ion-label>
+    </div>
+  </div>
+  <ion-list>
+    <div class="restaurant-detail fd-row ion-margin" *ngFor="let item of restaurants" (click)="resDetails(item)">
+      <img [src]="item?.img" />
+      <div class="resturant-details-sub-div">
+        <div class="restaurant-name spb">
+          <ion-label class="fw700">{{item?.name}}</ion-label>
+          <span class="fs10 fw300 padding-left">{{item?.distance}}</span>
+        </div>
+        <br />
+        <div>
+          <ion-label class="fw600 fs10">Dine-In</ion-label>
+          <ion-chip *ngFor="let food of item?.foodTypes">
+            <ion-label>{{food}}</ion-label>
+          </ion-chip>
+        </div>
+        <br />
+        <div class="fs10">
+          <ion-text class="dark-text"> $$$ . </ion-text>
+          <span class="green-text" *ngIf="item.isOpened"> Open </span>
+          <span class="red-text" *ngIf="!item.isOpened"> Closed </span>
+          <span *ngIf="item.isOpened">{{item?.time}}</span>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</div>

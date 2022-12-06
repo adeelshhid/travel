@@ -25,6 +25,131 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+
+ion-content {
+    --background: #dfdfdb !important;
+}
+
 .no-scroll {
-    --overflow: hidden;
+    --overflow: hidden !important;
+}
+
+.fd-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.fd-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.fs10 {
+    font-size: 10px !important;
+}
+
+.fs12 {
+    font-size: 12px !important;
+}
+
+.fs14 {
+    font-size: 14px !important;
+}
+
+.green-text {
+    color: #a5b026 !important;
+}
+.green-bg {
+    background: #a5b026 !important;
+    color: white;
+}
+.mv10{
+    margin: 10px 0;
+}
+.mv20{
+    margin: 20px 0;
+}
+.mt5 {
+    margin-top: 5px;
+}
+.mt10 {
+    margin-top: 10px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.float-right{
+    float: right;
+}
+.ml5 {
+    margin-left: 5px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.red-text {
+    color: #C65C45 !important;
+}
+
+.hw24 {
+    height: 24px !important;
+    width: 24px !important;
+}
+
+.inf {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-content: center !important;
+    align-items: center !important;
+}
+
+.dark-text {
+    color: #1e1d20 !important;
+}
+
+.item-no-padding {
+    --padding-start: 0 !important;
+    --padding-end: 0 !important;
+}
+
+.fw600 {
+    font-weight: 600 !important;
+}
+
+.bbgray {
+
+    border-bottom: 1px solid #C2C3CA;
+}
+
+.fw700 {
+    font-weight: 700 !important;
+}
+
+.fw400 {
+    font-weight: 400 !important;
+}
+
+.fw300 {
+    font-weight: 300 !important;
+}
+
+.ion-accordion-toggle-icon {
+    display: none !important;
+}
+
+
+
+.spb {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
 }

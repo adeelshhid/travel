@@ -9,12 +9,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'dine-in',
     pathMatch: 'full'
   },
   {
     path: 'imHere',
     component: ImHereComponent,
+  },
+  {
+    path: 'dine-in',
+    loadChildren: () => import('./pages/dine-in/dine-in.module').then( m => m.DineInPageModule)
   }
 ];
 
