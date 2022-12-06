@@ -1,107 +1,113 @@
 <ion-content>
+
+<ng-container *ngIf="!menuItems;">
+    <!-- Banner Image -->
+    <div class="banner-img">
+      <img [src]="data?.img" alt="">
+      <ion-buttons>
+        <ion-button (click)="global.closeModal()">
+          <ion-icon color="light" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
   
-  <!-- Banner Image -->
-  <div class="banner-img">
-    <img [src]="data?.img" alt="">
-    <ion-buttons>
-      <ion-button (click)="global.closeModal()">
-        <ion-icon color="light" name="close"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </div>
-
-  <!-- Restaurant Information -->
-  <div class="intro ion-padding">
-    <div class="spb">
-      <div>
-        <ion-label class="fw600 fs10">Dine-In</ion-label>
-        <ion-chip *ngFor="let food of data?.foodTypes">
-          <ion-label>{{food}}</ion-label>
-        </ion-chip>
+    <!-- Restaurant Information -->
+    <div class="intro ion-padding">
+      <div class="spb">
+        <div>
+          <ion-label class="fw600 fs10">Dine-In</ion-label>
+          <ion-chip *ngFor="let food of data?.foodTypes">
+            <ion-label>{{food}}</ion-label>
+          </ion-chip>
+        </div>
+        <ion-buttons>
+          <ion-button>
+            <ion-icon class="hw24" name="bookmark"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon class="hw24" name="share-custom"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </div>
-      <ion-buttons>
-        <ion-button>
-          <ion-icon class="hw24" name="bookmark"></ion-icon>
-        </ion-button>
-        <ion-button>
-          <ion-icon class="hw24" name="share-custom"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+      <ion-label class="fw700">{{data?.name}}</ion-label>
+      <div class="fs10 mt10">
+        <ion-text class="dark-text"> $$$ . </ion-text>
+        <span class="green-text" *ngIf="data.isOpened"> Open </span>
+        <span class="red-text" *ngIf="!data.isOpened"> Closed </span>
+        <span *ngIf="data.isOpened">{{data?.time}}</span>
+        <span class="ml20 fw700 inf">
+          <ion-icon name="location-outline"></ion-icon>&nbsp;
+          {{data?.location}}
+        </span>
+      </div>
     </div>
-    <ion-label class="fw700">{{data?.name}}</ion-label>
-    <div class="fs10 mt10">
-      <ion-text class="dark-text"> $$$ . </ion-text>
-      <span class="green-text" *ngIf="data.isOpened"> Open </span>
-      <span class="red-text" *ngIf="!data.isOpened"> Closed </span>
-      <span *ngIf="data.isOpened">{{data?.time}}</span>
-      <span class="ml20 fw700 inf">
-        <ion-icon name="location-outline"></ion-icon>&nbsp;
+  
+    <!-- Restaurant Menu -->
+    <div class="ion-padding">
+      <ion-item (click)="menuItems = !menuItems" detail="true" class="item-no-padding" lines="none">
+        <ion-label slot="start" class="fw700 fs16">Menu</ion-label>
+        <ion-label class="fw400 fs12" slot="end">Full menu</ion-label>
+      </ion-item>
+      <div class="items-h-list fd-row mv10">
+        <div class="item" *ngFor="let item of foodItems">
+          <img [src]="item?.img" alt="">
+          <ion-label class="fs14 fw600 mt5">{{item?.name}}</ion-label>
+          <ion-label class="fs14 fw400 mt5">{{item?.price}}</ion-label>
+        </div>
+      </div>
+      <br>
+      <hr class="bbgray">
+    </div>
+  
+    <!-- Reserve a Table -->
+    <div class="ion-padding">
+      
+      <ion-item detail="true" class="item-no-padding" lines="none">
+        <ion-label slot="start" class="fw700 fs16">Reserve a table</ion-label>
+        <ion-label class="fw400 fs12" slot="end">More available times</ion-label>
+      </ion-item>
+      <div class="fd-row">
+        <span class="fw600 fs14">3 seats, Fri | Oct 30, 2022 </span>
+        <ion-buttons>
+          <ion-button class="green-text fw600 fs14">
+            Edit
+          </ion-button>
+        </ion-buttons>
+      </div>
+      <div class="items-h-list fd-row mv10">
+        <ion-button class="green-bg fs12" fill="clear" *ngFor="let time of times">
+          {{time}}
+        </ion-button>
+      </div>
+      <br>
+      <hr class="bbgray">
+    </div>
+  
+    <!-- Information -->
+    <div class="ion-padding">
+      <ion-label class="fw700 fs16">Info</ion-label>
+      <div class="fw600 fs14 fd-row mt20">
+        <ion-icon name="time-outline"></ion-icon>&nbsp;&nbsp;&nbsp;
+        <span class="green-text" *ngIf="data.isOpened"> Open </span>
+        <span class="red-text" *ngIf="!data.isOpened"> Closed </span>
+        <span *ngIf="data.isOpened">&nbsp;{{data?.time}}</span>
+      </div>
+      <div class="fw600 fs14 fd-row mv20">
+        <ion-icon name="location-outline"></ion-icon>&nbsp;&nbsp;&nbsp;
         {{data?.location}}
-      </span>
-    </div>
-  </div>
-
-  <!-- Restaurant Menu -->
-  <div class="ion-padding">
-    <ion-item detail="true" class="item-no-padding" lines="none">
-      <ion-label slot="start" class="fw700 fs16">Menu</ion-label>
-      <ion-label class="fw400 fs12" slot="end">Full menu</ion-label>
-    </ion-item>
-    <div class="items-h-list fd-row mv10">
-      <div class="item" *ngFor="let item of foodItems">
-        <img [src]="item?.img" alt="">
-        <ion-label class="fs14 fw600 mt5">{{item?.name}}</ion-label>
-        <ion-label class="fs14 fw400 mt5">{{item?.price}}</ion-label>
       </div>
+      <img id="map-placeholder" src="../../../assets/icon/map-placeholder.png" alt="">
+      <ion-col size="12">
+        <ion-buttons class="float-right">
+          <ion-button color="dark" class="fs14 fw600">
+            Get Directions &nbsp;
+            <ion-icon name="direction-custom"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-col>
     </div>
-    <br>
-    <hr class="bbgray">
-  </div>
-
-  <!-- Reserve a Table -->
-  <div class="ion-padding">
-    <ion-item detail="true" class="item-no-padding" lines="none">
-      <ion-label slot="start" class="fw700 fs16">Reserve a table</ion-label>
-      <ion-label class="fw400 fs12" slot="end">More available times</ion-label>
-    </ion-item>
-    <div class="fd-row">
-      <span class="fw600 fs14">3 seats, Fri | Oct 30, 2022 </span>
-      <ion-buttons>
-        <ion-button class="green-text fw600 fs14">
-          Edit
-        </ion-button>
-      </ion-buttons>
-    </div>
-    <div class="items-h-list fd-row mv10">
-      <ion-button class="green-bg fs12" fill="clear" *ngFor="let time of times">
-        {{time}}
-      </ion-button>
-    </div>
-    <br>
-    <hr class="bbgray">
-  </div>
-
-  <!-- Information -->
-  <div class="ion-padding">
-    <ion-label class="fw700 fs16">Info</ion-label>
-    <div class="fw600 fs14 fd-row mt20">
-      <ion-icon name="time-outline"></ion-icon>&nbsp;&nbsp;&nbsp;
-      <span class="green-text" *ngIf="data.isOpened"> Open </span>
-      <span class="red-text" *ngIf="!data.isOpened"> Closed </span>
-      <span *ngIf="data.isOpened">&nbsp;{{data?.time}}</span>
-    </div>
-    <div class="fw600 fs14 fd-row mv20">
-      <ion-icon name="location-outline"></ion-icon>&nbsp;&nbsp;&nbsp;
-      {{data?.location}}
-    </div>
-    <img id="map-placeholder" src="../../../assets/icon/map-placeholder.png" alt="">
-    <ion-col size="12">
-      <ion-buttons class="float-right">
-        <ion-button color="dark" class="fs14 fw600">
-          Get Directions &nbsp;
-          <ion-icon name="direction-custom"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-col>
-  </div>
+</ng-container>
+<ng-container *ngIf="menuItems;">
+<menu-items id="slide" (closeMenu)="closeMenuItems($event)"></menu-items>
+</ng-container>
 </ion-content>

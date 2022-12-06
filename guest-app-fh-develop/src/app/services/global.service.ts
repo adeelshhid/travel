@@ -136,6 +136,9 @@ export class GlobalService {
     this.router.navigate([route], extras);
   }
 
+  getNavigationExtras(){
+    return this.router.getCurrentNavigation()?.extras?.state
+  }
 
   // async getCurrentPosLocation() {
   //   // console.log('kkkkk====');

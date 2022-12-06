@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button  (click)="close()">
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label slot="start" class="dark-text fw600"> View Menu</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list-header>
+    <ion-label class="fs16 dark-text fw700">Popular Items</ion-label>
+  </ion-list-header>
+  <ion-list>
+    <div class="item-div ion-padding" *ngFor="let item of arr">
+      <div>
+        <ion-label class="dark-text fs14 fw600 mt-5">{{item.label}}</ion-label>
+        <p class="fw400 fs14 light-text mt-5 ion-text-wrap">
+          {{item.description}}
+        </p>
+        <ion-text class="fw400 dark-text fs14 mt-5"> {{item.price}} </ion-text>
+      </div>
+      <div class="img-container">
+        <img [src]="item.img" />
+      </div>
+    </div>
+    <ion-list-header>
+      <ion-label class="fs16 dark-text fw700">Appetizers</ion-label>
+    </ion-list-header>
+    <div class="item-div ion-padding" *ngFor="let item of arr2">
+      <div>
+        <ion-label class="dark-text fs14 fw600 mt-5">{{item.label}}</ion-label>
+        <p class="fw400 fs14 light-text mt-5 ion-text-wrap">
+          {{item.description}}
+        </p>
+        <ion-text class="fw400 dark-text fs14 mt-5"> {{item.price}} </ion-text>
+      </div>
+      <div class="img-container">
+        <img [src]="item.img" />
+      </div>
+    </div>
+    <ion-list-header>
+      <ion-label class="fs16 dark-text fw700">Dinner Special</ion-label>
+    </ion-list-header>
+    <div *ngFor="let item of arr3" class="item-div ion-padding">
+      <div>
+        <ion-label class="dark-text fs14 fw600 mt-5">{{item.label}}</ion-label>
+        <p class="fw400 fs14 light-text mt-5 ion-text-wrap">
+          {{item.description}}
+        </p>
+        <ion-text class="fw400 dark-text fs14 mt-5"> {{item.price}} </ion-text>
+      </div>
+      <div class="img-container">
+        <img [src]="item.img" />
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

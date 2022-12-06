@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { NavigationExtras } from '@angular/router';
+import { GlobalService } from './../../services/global.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonAccordionGroup } from '@ionic/angular';
 
 @Component({
   selector: 'app-dine-in',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dine-in.page.scss'],
 })
 export class DineInPage implements OnInit {
+  selectedSeats: number = 1
+  @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
 
   restaurants: Array<any> = [
     {
@@ -61,9 +66,33 @@ export class DineInPage implements OnInit {
       location: 'Pakistan'
     }
   ]
-  constructor() { }
+
+  date: Date = new Date()
+  constructor(private global: GlobalService) { }
 
   ngOnInit() {
   }
 
+  filterRes() {
+    let extras: NavigationExtras = {
+      state: {
+        data: this.restaurants
+      }
+    }
+    this.global.navigateWithExtras('/dine-in/results', extras)
+  }
+
+  selectSeats(seats) {
+    this.selectedSeats = seats
+    console.log(this.accordionGroup.value)
+    if (this.accordionGroup.value === 'third') {
+      this.accordionGroup.value = undefined;
+    } else {
+      this.accordionGroup.value = 'third';
+    }  }
+
+    dateChange(evt){
+      console.log(evt.target.value)
+      this.date = evt.target.value
+    }
 }

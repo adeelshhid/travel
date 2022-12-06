@@ -10,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RestaurantsComponent implements OnInit {
 
   @Input() restaurants:Array<any> = []
+  @Input() sortFilters:boolean = true
   constructor(private global:GlobalService) { }
 
   ngOnInit() {}

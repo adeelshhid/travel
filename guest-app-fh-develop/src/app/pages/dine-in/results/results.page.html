@@ -1,0 +1,15 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/dine-in" routerDirection="back">
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-label>Results</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<restaurants [sortFilters]="false" [restaurants]="filteredRes"></restaurants>
+</ion-content>

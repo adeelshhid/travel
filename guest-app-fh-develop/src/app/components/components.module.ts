@@ -1,3 +1,4 @@
+import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { IonicModule } from '@ionic/angular';
@@ -8,12 +9,12 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [RestaurantsComponent,RestaurantDetailComponent],
+  declarations: [RestaurantsComponent,RestaurantDetailComponent,MenuItemsComponent],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule
   ],
-  exports:[RestaurantsComponent,RestaurantDetailComponent],
+  exports:[RestaurantsComponent,RestaurantDetailComponent,MenuItemsComponent],
 })
 export class ComponentsModule { }

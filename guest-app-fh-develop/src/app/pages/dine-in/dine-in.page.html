@@ -1,20 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button  routerLink="/home" routerDirection="back">
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="fd-col ion-text-center">
+      <ion-icon name="dine-in"></ion-icon>
+      <ion-label>Dine-In</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <div class="top-main-div">
-    <ion-header class="ion-no-border">
-      <ion-toolbar class="ion-no-border">
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="/home" mode="md"></ion-back-button>
-        </ion-buttons>
-        <div class="fd-col ion-text-center">
-          <ion-icon name="dine-in"></ion-icon>
-          <ion-label>Dine-In</ion-label>
-        </div>
-      </ion-toolbar>
-    </ion-header>
+    
 
     <div class="selection-div">
       <form FormGroup="SelectionForm">
-        <ion-accordion-group class="ion-margin">
+        <ion-accordion-group #accordionGroup class="ion-margin">
           <ion-accordion value="first">
             <ion-item slot="header" class="fs14">
               <ion-label slot="start">Where to eat?</ion-label>
@@ -23,7 +26,7 @@
                 <ion-icon name="location-outline"></ion-icon>
               </ion-label>
             </ion-item>
-            <div slot="content">
+            <div class="mh245" slot="content">
               <ion-item lines="none">
                 <ion-label slot="end">Awesome Label</ion-label>
               </ion-item>
@@ -33,25 +36,34 @@
             <ion-item slot="header" class="fs14">
               <ion-label slot="start">When?</ion-label>
               <ion-label slot="end" class="fd-row fs12"
-                >Fri | Oct 30, 2022
+                >{{date | date:'E'}} | {{date | date:'mediumDate'}}
                 <ion-icon name="location-outline"></ion-icon>
               </ion-label>
             </ion-item>
-            <div slot="content"></div>
+            <div slot="content">
+                <ion-datetime color="success" display-format="DD.MM.YYYY HH:mm" (ionChange)="dateChange($event)" hourCycle="12h"></ion-datetime>
+            </div>
           </ion-accordion>
           <ion-accordion value="third">
             <ion-item slot="header" class="fs14">
               <ion-label slot="start">Number of seats</ion-label>
               <ion-label slot="end" class="fd-row fs12">
                 <ion-icon id="seat" name="seat"></ion-icon>
-                x 3
+                x {{selectedSeats}}
               </ion-label>
             </ion-item>
-            <div slot="content"></div>
+            <div class="mh245" slot="content">
+              <ion-item lines="none" [ngStyle]="{'--background':selectedSeats === seat? 'lightgray' : 'none'}" (click)="selectSeats(seat)" class="fs14" *ngFor="let seat of [1,2,3,4,5,6,7,8,9]">
+                <ion-label slot="end" class="fd-row fs12">
+                  <ion-icon id="seat" name="seat"></ion-icon>
+                  x {{seat}}
+                </ion-label>
+              </ion-item>
+            </div>
           </ion-accordion>
         </ion-accordion-group>
         <div class="ion-padding">
-          <ion-button> Check restaurants </ion-button>
+          <ion-button (click)="filterRes()"> Check restaurants </ion-button>
         </div>
       </form>
     </div>
