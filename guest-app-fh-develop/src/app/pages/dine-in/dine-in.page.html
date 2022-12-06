@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="ion-no-border">
     <ion-buttons slot="start">
-      <ion-button  routerLink="/home" routerDirection="back">
+      <ion-button routerLink="/home" routerDirection="back">
         <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,7 +13,7 @@
 </ion-header>
 <ion-content>
   <div class="top-main-div">
-    
+
 
     <div class="selection-div">
       <form FormGroup="SelectionForm">
@@ -21,27 +21,34 @@
           <ion-accordion value="first">
             <ion-item slot="header" class="fs14">
               <ion-label slot="start">Where to eat?</ion-label>
-              <ion-label slot="end" class="fd-row fs12"
-                >Royal Island
+              <ion-label slot="end" class="fd-row fs12">{{selectedLocation}}
                 <ion-icon name="location-outline"></ion-icon>
               </ion-label>
             </ion-item>
             <div class="mh245" slot="content">
-              <ion-item lines="none">
-                <ion-label slot="end">Awesome Label</ion-label>
+              <ion-item lines="none" [ngStyle]="{'--background':selectedLocation === location? 'rgb(209,209,207)' : 'none'}"
+                (click)="selectLocation(location)" class="fs14" *ngFor="let location of locations">
+                <ion-label slot="end" class="fd-row fs12">
+                  {{location}}
+                </ion-label>
               </ion-item>
             </div>
           </ion-accordion>
           <ion-accordion value="second">
             <ion-item slot="header" class="fs14">
               <ion-label slot="start">When?</ion-label>
-              <ion-label slot="end" class="fd-row fs12"
-                >{{date | date:'E'}} | {{date | date:'mediumDate'}}
-                <ion-icon name="location-outline"></ion-icon>
+              <ion-label slot="end" class="fd-row fs12">{{date | date:'E'}} | {{date | date:'mediumDate'}}
               </ion-label>
             </ion-item>
             <div slot="content">
-                <ion-datetime color="success" display-format="DD.MM.YYYY HH:mm" (ionChange)="dateChange($event)" hourCycle="12h"></ion-datetime>
+              <ion-datetime [presentation]="showTime?'date-time':'date'" color="success"
+                display-format="DD.MM.YYYY HH:mm" (ngModelChange)="dateChange($event)" hourCycle="12h">
+                <ion-radio-group class="fd-row" allowEmptySelection="true" slot="buttons">
+                  <ion-radio color="success" mode="md" (click)="toggleTime()" aria-checked="true"></ion-radio>
+                  &nbsp;&nbsp;
+                  <ion-label>Select Time</ion-label>
+                </ion-radio-group>
+              </ion-datetime>
             </div>
           </ion-accordion>
           <ion-accordion value="third">
@@ -53,7 +60,8 @@
               </ion-label>
             </ion-item>
             <div class="mh245" slot="content">
-              <ion-item lines="none" [ngStyle]="{'--background':selectedSeats === seat? 'lightgray' : 'none'}" (click)="selectSeats(seat)" class="fs14" *ngFor="let seat of [1,2,3,4,5,6,7,8,9]">
+              <ion-item lines="none" [ngStyle]="{'--background':selectedSeats === seat? 'rgb(209,209,207)' : 'none'}"
+                (click)="selectSeats(seat)" class="fs14" *ngFor="let seat of [1,2,3,4,5,6,7,8,9]">
                 <ion-label slot="end" class="fd-row fs12">
                   <ion-icon id="seat" name="seat"></ion-icon>
                   x {{seat}}

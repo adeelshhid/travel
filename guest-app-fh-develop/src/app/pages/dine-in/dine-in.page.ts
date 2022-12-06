@@ -1,6 +1,6 @@
 import { NavigationExtras } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { IonAccordionGroup } from '@ionic/angular';
 
 @Component({
@@ -10,8 +10,16 @@ import { IonAccordionGroup } from '@ionic/angular';
 })
 export class DineInPage implements OnInit {
   selectedSeats: number = 1
+  selectedLocation:string = 'Royal Island'
+  showTime: boolean = false
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
-
+  locations:Array<any> =[
+    'Paradise Island',
+    'Royal Island',
+    'Holiday Island',
+    'Fun Island',
+    'Sun Island',
+  ]
   restaurants: Array<any> = [
     {
       name: 'Mandho Restaurant',
@@ -68,7 +76,8 @@ export class DineInPage implements OnInit {
   ]
 
   date: Date = new Date()
-  constructor(private global: GlobalService) { }
+  constructor(private global: GlobalService,
+    private ngZone: NgZone) { }
 
   ngOnInit() {
   }
@@ -89,10 +98,29 @@ export class DineInPage implements OnInit {
       this.accordionGroup.value = undefined;
     } else {
       this.accordionGroup.value = 'third';
-    }  }
-
-    dateChange(evt){
-      console.log(evt.target.value)
-      this.date = evt.target.value
     }
+  }
+
+  selectLocation(location) {
+    this.selectedLocation = location
+    console.log(this.accordionGroup.value)
+    if (this.accordionGroup.value === 'first') {
+      this.accordionGroup.value = undefined;
+    } else {
+      this.accordionGroup.value = 'first';
+    }
+  }
+
+  dateChange(evt) {
+    console.log(evt)
+    evt.preventDefault()
+    this.ngZone.run(() => {
+      this.date = evt.target.value
+    })
+  }
+
+  toggleTime() {
+    this.showTime = !this.showTime
+    // this.date = new Date()
+  }
 }
