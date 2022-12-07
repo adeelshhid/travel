@@ -6,15 +6,11 @@
       </ion-button>
     </ion-buttons>
     <div class="header-text ion-text-center">
-      <ion-label class="fw700" [hidden]="progress">Reservation Request Sent</ion-label>
+      <ion-label class="fw700" >Reservation Request Sent</ion-label>
       <br />
-      <p class="fs12" [hidden]="progress">Waiting for the restaurant to confirm your order...</p>
+      <p class="fs12" >Waiting for the restaurant to confirm your order...</p>
     </div>
-    <div class="header-text ion-text-center">
-      <ion-label class="fw700" *ngIf="progress" > Order Confirmed</ion-label>
-      <br />
-      <p class="fs12" *ngIf="progress">Please see your reservation and attend the venue on time.</p>
-    </div>
+
     <ion-progress-bar type="determinate" [value]="progress"  (ionChange)="progessChange($event)"></ion-progress-bar>
   </div>
   <div class="bottom-main">

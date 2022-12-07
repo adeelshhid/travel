@@ -73,6 +73,9 @@ ion-content {
 .mt5 {
   margin-top: 5px;
 }
+.mb10{
+  margin-bottom: 10% !important;
+}
 .mt10 {
   margin-top: 10px;
 }
@@ -173,11 +176,17 @@ ion-content {
   height: 30%;
 }
 .bg-dark {
-  background: #1e1d20;
+  background: #1e1d20 !important;
 }
 .light-text {
   color: #dfdfdb !important;
 }
+.grey-text{
+  color: #716D75 !important;
+}
 .padding {
-  padding: 10px 0 0 0;
+  padding: 10px 0 0 0 !important;
+}
+.pr5{
+  padding-right: 5px !important;
 }

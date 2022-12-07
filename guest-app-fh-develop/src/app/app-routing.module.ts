@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'order-details',
     loadChildren: () => import('./pages/order-details/order-details.module').then( m => m.OrderDetailsPageModule)
+  },
+  {
+    path: 'reserve-table',
+    loadChildren: () => import('./pages/reserve-table/reserve-table.module').then( m => m.ReserveTablePageModule)
   }
 ];
 

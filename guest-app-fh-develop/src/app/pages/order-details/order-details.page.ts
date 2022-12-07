@@ -20,7 +20,9 @@ export class OrderDetailsPage implements OnInit {
         console.log(this.progress)
       }
     })
-    
+    if(this.progress==0.5){
+      this.isConfirmed=true
+    }
 
   }
 
@@ -30,7 +32,7 @@ export class OrderDetailsPage implements OnInit {
   progessChange(evt) {
     console.log(evt)
     if (this.progress == 0.50) {
-      alert('asdas')
+      this.isConfirmed=true
     }
   }
 
