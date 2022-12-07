@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="header-div bg-dark light-text">
+    <ion-buttons slot="start" class="padding">
+      <ion-button routerLink="home" routerDirection="back">
+        <ion-icon slot="start" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="header-text ion-text-center">
+      <ion-label class="fw700" [hidden]="progress">Reservation Request Sent</ion-label>
+      <br />
+      <p class="fs12" [hidden]="progress">Waiting for the restaurant to confirm your order...</p>
+    </div>
+    <div class="header-text ion-text-center">
+      <ion-label class="fw700" *ngIf="progress" > Order Confirmed</ion-label>
+      <br />
+      <p class="fs12" *ngIf="progress">Please see your reservation and attend the venue on time.</p>
+    </div>
+    <ion-progress-bar type="determinate" [value]="progress"></ion-progress-bar>
+  </div>
+  <div class="bottom-main">
+    <div class="info mt20">
+      <div class="img-div">
+        <img src="../../../assets/icon/dine-in.svg" />
+      </div>
+      <div class="text-div">
+        <p>
+          <ion-label class="fw700 fs16">Reservation Info</ion-label>
+          <ion-label class="mt10 fs14">Mandhoo Restaurant </ion-label>
+          <ion-label class="mt10 fs14"
+            >Fri | Oct 30, 2022 at 6:15 PM
+          </ion-label>
+          <ion-label class="mt10 fs14">3 seats</ion-label>
+          <a href="" class="mt20"> Share the order to others</a>
+          <a href="" class="mt10">Edit / Cancel this reservation</a>
+        </p>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="info">
+      <div class="img-div">
+        <img src="../../../assets/icon/contact.png" />
+      </div>
+      <div class="text-div">
+        <p>
+          <ion-label class="fw700 fs16">Contact Info</ion-label>
+          <ion-label class="mt10 fs14">Gary Wilson </ion-label>
+          <ion-label class="mt10 fs14">tedcc07@gmail.com</ion-label>
+          <ion-label class="mt10 fs14">+1 825 3957 4432</ion-label>
+        </p>
+        <div class="line"></div>
+        <ion-label class="mt20 fs14 fw600">Question with the order?</ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

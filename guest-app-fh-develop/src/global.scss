@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -25,152 +25,159 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 ion-content {
-    --background: #dfdfdb !important;
+  --background: #dfdfdb !important;
 }
 
 .no-scroll {
-    --overflow: hidden !important;
+  --overflow: hidden !important;
 }
 
 .fd-col {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
 }
 
 .fd-row {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
 }
 
 .fs10 {
-    font-size: 10px !important;
+  font-size: 10px !important;
 }
 
 .fs12 {
-    font-size: 12px !important;
+  font-size: 12px !important;
 }
 
 .fs14 {
-    font-size: 14px !important;
+  font-size: 14px !important;
 }
 
 .green-text {
-    color: #a5b026 !important;
+  color: #a5b026 !important;
 }
 .green-bg {
-    background: #a5b026 !important;
-    color: white;
+  background: #a5b026 !important;
+  color: white;
 }
-.mv10{
-    margin: 10px 0;
+.mv10 {
+  margin: 10px 0;
 }
-.mv20{
-    margin: 20px 0;
+.mv20 {
+  margin: 20px 0;
 }
 .mt5 {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .mt10 {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .mt20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-.float-right{
-    float: right;
+.float-right {
+  float: right;
 }
 .ml5 {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .ml10 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .ml20 {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .red-text {
-    color: #C65C45 !important;
+  color: #c65c45 !important;
 }
 
 .hw24 {
-    height: 24px !important;
-    width: 24px !important;
+  height: 24px !important;
+  width: 24px !important;
 }
 
 .inf {
-    display: inline-flex !important;
-    flex-direction: row !important;
-    align-content: center !important;
-    align-items: center !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-content: center !important;
+  align-items: center !important;
 }
 
 .dark-text {
-    color: #1e1d20 !important;
+  color: #1e1d20 !important;
 }
 
 .item-no-padding {
-    --padding-start: 0 !important;
-    --padding-end: 0 !important;
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
 }
 
 .fw600 {
-    font-weight: 600 !important;
-}
-
-.bbgray {
-
-    border-bottom: 1px solid #C2C3CA;
+  font-weight: 600 !important;
 }
 
 .fw700 {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
 }
 
 .fw400 {
-    font-weight: 400 !important;
+  font-weight: 400 !important;
 }
 
 .fw300 {
-    font-weight: 300 !important;
+  font-weight: 300 !important;
 }
 
 .ion-accordion-toggle-icon {
-    display: none !important;
+  display: none !important;
 }
-
-
 
 .spb {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
 }
 .banner-img {
-    height: 25%;
+  height: 25%;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.175) 20.04%,
+    rgba(0, 0, 0, 0) 0%
+  );
+
+  img {
+    height: 95%;
     width: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.175) 20.04%, rgba(0, 0, 0, 0) 0%);
+    border-radius: 24px 0px 0px 0px;
+    object-fit: cover;
+    margin-top: 5%;
+  }
 
-    img {
-        height: 95%;
-        width: 100%;
-        border-radius: 24px 0px 0px 0px;
-        object-fit: cover;
-        margin-top: 5%;
-    }
-
-    ion-buttons {
-        position: absolute;
-        right: 10px;
-        top: 5%;
-    }
-}.h30{
-    height: 30%;
+  ion-buttons {
+    position: absolute;
+    right: 10px;
+    top: 5%;
+  }
+}
+.h30 {
+  height: 30%;
+}
+.bg-dark {
+  background: #1e1d20;
+}
+.light-text {
+  color: #dfdfdb !important;
+}
+.padding {
+  padding: 10px 0 0 0;
 }
