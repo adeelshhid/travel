@@ -40,12 +40,16 @@ export class GlobalService {
     toast.present();
   }
 
-  closeModal(data?:any){
-    if (data) {
-    this.modalController.dismiss(data)
-    }else{
-    this.modalController.dismiss()
+  async closeModal(data?:any){
+    const check = await this.modalController.getTop();
+    if (check) {
+      if (data) {
+        this.modalController.dismiss(data)
+        }else{
+        this.modalController.dismiss()
+        }
     }
+   
   }
   async alertController(msg: any) {
     const alert = this.alertCtlr.create({
