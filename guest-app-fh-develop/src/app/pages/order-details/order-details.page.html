@@ -15,7 +15,7 @@
       <br />
       <p class="fs12" *ngIf="progress">Please see your reservation and attend the venue on time.</p>
     </div>
-    <ion-progress-bar type="determinate" [value]="progress"></ion-progress-bar>
+    <ion-progress-bar type="determinate" [value]="progress"  (ionChange)="progessChange($event)"></ion-progress-bar>
   </div>
   <div class="bottom-main">
     <div class="info mt20">

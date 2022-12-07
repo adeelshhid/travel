@@ -56,7 +56,8 @@ ion-progress-bar {
   --background: transparent;
   --progress-background: #a5b026;
   width: 100%;
-  align-self: baseline;
+  position: absolute;
+  top: 19.5%;
 }
 .line {
   border: 0.5px solid #716d75;
