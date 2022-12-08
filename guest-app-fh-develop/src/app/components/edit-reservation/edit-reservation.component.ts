@@ -21,7 +21,7 @@ throw new Error('Method not implemented.');
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
 selectTime: any;
 
-  constructor(private global:GlobalService) { }
+  constructor(public global:GlobalService) { }
 
   ngOnInit() {}
 

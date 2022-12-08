@@ -1,8 +1,8 @@
 <div class="edit-res">
 <div class="btn-div">
  <ion-buttons >
-  <ion-button class="grey-text ">
-    <ion-icon  name="close-outline"></ion-icon>
+  <ion-button class="grey-text " (click)="global.closeModal()">
+    <ion-icon  name="close-outline" class="dark-text"></ion-icon>
   </ion-button>
  </ion-buttons>
  
@@ -71,6 +71,9 @@
       </ion-item>
     </div>
   </ion-accordion>
-  <ion-button (click)="next()" class="mb10"> Next </ion-button>
+  <div class="btns-div">
+    <ion-button (click)="next()" > Confirm </ion-button>
+    <ion-button (click)="next()" id="btn-outline"> Cancel the order </ion-button>
+  </div>
 </ion-accordion-group>
 </div>  
