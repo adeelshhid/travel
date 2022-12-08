@@ -58,9 +58,12 @@
           6:15 PM
         </div>
       </ion-item>
-      <div slot="content">
-        <ion-item slot="end">
-          <ion-datetime presentation="time"></ion-datetime>
+      <div slot="content" class="ion-padding mh245">
+        <ion-item class="fd-col no-padding"  *ngFor="let item of [1,2,3,4,5]" >
+         <ion-item class="fd-row  no-padding" *ngFor="let item of [1,2,3,4]" >
+          <ion-label position="stacked" class="grey-text">10 AM - 3 PM</ion-label>
+          <div class="time-div mtb">10:00 AM</div>
+         </ion-item>
         </ion-item>
       </div>
     </ion-accordion>
@@ -72,7 +75,7 @@
           x {{selectedSeats}}
         </ion-label>
       </ion-item>
-      <div class="mh245" slot="content">
+      <div class="mh245 " slot="content">
         <ion-item
           lines="none"
           [ngStyle]="{'--background':selectedSeats === seat? 'rgb(209,209,207)' : 'none'}"
