@@ -45,9 +45,10 @@ export class ReserveTablePage implements OnInit {
     }
   }
 
-  sendingReq(){
-    this.global.presentModal(SendingReservartionReqComponent,{})
+  next(){
+    this.global.navigate('reserve-table/customer-info')
   }
+  
 }
 
 

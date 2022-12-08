@@ -1,5 +1,5 @@
 .container {
-    height: auto;
+    height: 45%;
     min-height: 40%;
     width: 100%;
     position: absolute;
@@ -25,8 +25,8 @@
 img {
     width: 37.343px;
     margin: 5px 0;
-} #sending {
-    height: 100%;
+} .sending {
+    height: 45%;
     width: 100%;
     display: flex !important;
     align-content: center !important;
@@ -34,6 +34,4 @@ img {
     align-items: center !important;
     flex-wrap: nowrap !important;
     flex-direction: column !important;
-
-
 }

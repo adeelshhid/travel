@@ -48,14 +48,14 @@
         </ion-item>
       </div>
       <ion-item class="checkbox-item" lines="none">
-        <ion-checkbox [disabled]="!customerForm.valid"></ion-checkbox>
+        <ion-checkbox mode="md" [disabled]="!customerForm.valid"></ion-checkbox>
         <p class="ion-text-wrap">
           You agree to Ways & Villas <b>Terms of Service</b> and
           <b>Privacy Policy</b>. We will send your contact information to the
           restaurant.
         </p>
       </ion-item>
-      <ion-button class="corner-btn" [disabled]="!customerForm.valid">
+      <ion-button class="corner-btn" (click)="sendingReq()" [disabled]="!customerForm.valid">
         Reserve Now
       </ion-button>
     </div>
