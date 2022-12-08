@@ -1,17 +1,37 @@
 <ion-content>
-  <div class="header-div bg-dark light-text">
+  <div [ngClass]="isCompleted && !isConfirmed ? 'app-bg':'bg-dark'" class="header-div light-text">
     <ion-buttons slot="start" class="padding">
       <ion-button routerLink="home" routerDirection="back">
-        <ion-icon slot="start" name="chevron-back"></ion-icon>
+        <ion-icon slot="start" [ngClass]="isCompleted && !isConfirmed ? 'dark-text':'light-text' " name="chevron-back">
+        </ion-icon>
       </ion-button>
     </ion-buttons>
-    <div class="header-text ion-text-center">
-      <ion-label class="fw700" >Reservation Request Sent</ion-label>
+    <div *ngIf="!isConfirmed && !isCompleted" class="header-text ion-text-center">
+      <ion-label class="fw700">Reservation Request Sent</ion-label>
       <br />
-      <p class="fs12" >Waiting for the restaurant to confirm your order...</p>
+      <p class="fs12">Waiting for the restaurant to confirm your order...</p>
     </div>
 
-    <ion-progress-bar type="determinate" [value]="progress"  (ionChange)="progessChange($event)"></ion-progress-bar>
+    <div *ngIf="isConfirmed && !isCompleted" class="header-text ion-text-center">
+      <ion-label class="fw700">Order Confirmed</ion-label>
+      <br />
+      <p class="fs12">Please see your reservation and attend the venue on time.</p>
+    </div>
+
+    <div *ngIf="isCompleted && !isConfirmed" class="header-text app-bg dark-text ion-text-center">
+      <ion-label class="fw700">Order Completed</ion-label>
+      <br />
+      <p class="fs12">You don’t need to pay for anything until Checkout.</p>
+    </div>
+    <!-- <div *ngIf="!isCompleted" class="header-text ion-text-center">
+      <ion-label class="fw700" >Order denied</ion-label>
+      <br />
+      <p class="fs12" >From the venue: “We are busy at this time, try another time slot.</p>
+    </div> -->
+
+    <ion-progress-bar type="determinate" [value]="progress" (ionChange)="progessChange($event)">
+    </ion-progress-bar>
+    <ion-icon *ngIf="isCompleted && !isConfirmed" class="tick app-bg" name="tick"></ion-icon>
   </div>
   <div class="bottom-main">
     <div class="info mt20">
@@ -22,8 +42,7 @@
         <p>
           <ion-label class="fw700 fs16">Reservation Info</ion-label>
           <ion-label class="mt10 fs14">Mandhoo Restaurant </ion-label>
-          <ion-label class="mt10 fs14"
-            >Fri | Oct 30, 2022 at 6:15 PM
+          <ion-label class="mt10 fs14">Fri | Oct 30, 2022 at 6:15 PM
           </ion-label>
           <ion-label class="mt10 fs14">3 seats</ion-label>
           <a href="" class="mt20"> Share the order to others</a>

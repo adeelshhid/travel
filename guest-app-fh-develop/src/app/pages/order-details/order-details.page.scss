@@ -1,7 +1,7 @@
 ion-content {
   --background: #eeeeee !important;
   .header-div {
-    height: 20%;
+    height: 25%;
     display: flex;
     flex-direction: column;
 
@@ -57,9 +57,18 @@ ion-progress-bar {
   --progress-background: #a5b026;
   width: 100%;
   position: absolute;
-  top: 19.5%;
+  top: 24.5%;
 }
 .line {
   border: 0.5px solid #716d75;
   margin-bottom: 20px;
+}.tick{
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 50%;
+  top: 23.5%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  border-radius: 50%;
 }

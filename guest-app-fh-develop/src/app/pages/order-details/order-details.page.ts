@@ -9,20 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDetailsPage implements OnInit {
   public progress = 0;
-  isConfirmed:boolean = false
+  isConfirmed: boolean = false
+  isCompleted:boolean = false
   constructor(private global: GlobalService, private route: Router) {
 
 
-   const interval =  setInterval(() => {
-      this.progress += 0.001;
-      if (this.progress >=0.5) {
-        this.progress = 0
-        console.log(this.progress)
+    const interval = setInterval(() => {
+      this.progress += 0.0002;
+      if (this.progress >= 0.5) {
+        this.isConfirmed = true
+        // console.log(this.progress)
+      }
+      if (this.progress >= 1) {
+        this.isConfirmed = false
+        this.isCompleted = true
+        clearInterval(interval)
       }
     })
-    if(this.progress==0.5){
-      this.isConfirmed=true
-    }
 
   }
 
@@ -32,7 +35,7 @@ export class OrderDetailsPage implements OnInit {
   progessChange(evt) {
     console.log(evt)
     if (this.progress == 0.50) {
-      this.isConfirmed=true
+      this.isConfirmed = true
     }
   }
 
