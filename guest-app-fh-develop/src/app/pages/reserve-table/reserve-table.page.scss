@@ -48,7 +48,7 @@ ion-accordion {
   div {
     overflow-y: scroll !important;
     height: auto;
-    box-shadow: 0px 1px 0px 0px #182d3633;
+    // box-shadow: 0px 1px 0px 0px #182d3633;
     background: #f2f2ef;
 
     ion-item {
@@ -63,4 +63,24 @@ ion-accordion {
 #seat {
   width: 18.5px;
   height: 22.5px;
+}
+.r{
+  display: flex;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: scroll;
+    div:first-child{
+      margin: 0 5px 0 0;
+    }
+    div{
+      height: fit-content;
+      width: fit-content;
+      min-width: 94px;
+      background: #a5b026;
+      color: #dfdfdb;
+      padding: 10px;
+      text-align: center;
+      margin: 0 5px;
+      border-radius: 4px;
+    }
 }

@@ -9,88 +9,69 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<form FormGroup="resTable">
-  <ion-accordion-group #accordionGroup class="ion-margin">
-    <ion-accordion value="first">
-      <ion-item slot="header" class="fs14 mt20">
-        <ion-label slot="start" class="grey-text">Date</ion-label>
-        <p>
-          <ion-label slot="end" class="green-text fw700 ion-no-matgin pr5"
-            >Today</ion-label
-          >
-          <ion-label slot="end" class="fw600">Fri | Oct 30, 2022</ion-label>
-        </p>
-      </ion-item>
-      <div slot="content">
-        <ion-datetime
-          [presentation]="showTime?'date-time':'date'"
-          color="success"
-          display-format="DD.MM.YYYY HH:mm"
-          (ngModelChange)="dateChange($event)"
-          hourCycle="12h"
-        >
-          <ion-radio-group
-            class="fd-row"
-            allowEmptySelection="true"
-            slot="buttons"
-          >
-            <ion-radio
-              color="success"
-              mode="md"
-              (click)="toggleTime()"
-              aria-checked="true"
-            ></ion-radio>
-            &nbsp;&nbsp;
-            <ion-label></ion-label>
-          </ion-radio-group>
-        </ion-datetime>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" class="fs14 mt20" lines="full">
-        <ion-label slot="start" class="grey-text">Time</ion-label>
-        <div
-          class="time-div"
-          slot="end"
-          [hidden]="selectTime"
-          (click)="onClick()"
-        >
-          6:15 PM
-        </div>
-      </ion-item>
-      <div slot="content" class="ion-padding mh245">
-        <ion-item class="fd-col no-padding"  *ngFor="let item of [1,2,3,4,5]" >
-         <ion-item class="fd-row  no-padding" *ngFor="let item of [1,2,3,4]" >
-          <ion-label position="stacked" class="grey-text">10 AM - 3 PM</ion-label>
-          <div class="time-div mtb">10:00 AM</div>
-         </ion-item>
+  <form FormGroup="resTable">
+    <ion-accordion-group #accordionGroup class="ion-margin">
+      <ion-accordion value="first">
+        <ion-item slot="header" class="fs14 mt20">
+          <ion-label slot="start" class="grey-text">Date</ion-label>
+          <p>
+            <ion-label slot="end" class="green-text fw700 ion-no-matgin pr5">Today</ion-label>
+            <ion-label slot="end" class="fw600">Fri | Oct 30, 2022</ion-label>
+          </p>
         </ion-item>
-      </div>
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header" class="fs14 mt20" lines="full">
-        <ion-label slot="start" class="grey-text">Number of seats</ion-label>
-        <ion-label slot="end" class="fd-row fs12">
-          <ion-icon id="seat" name="seat"></ion-icon>
-          x {{selectedSeats}}
-        </ion-label>
-      </ion-item>
-      <div class="mh245 " slot="content">
-        <ion-item
-          lines="none"
-          [ngStyle]="{'--background':selectedSeats === seat? 'rgb(209,209,207)' : 'none'}"
-          (click)="selectSeats(seat)"
-          class="fs14"
-          *ngFor="let seat of [1,2,3,4,5,6,7,8,9]"
-        >
+        <div slot="content">
+          <ion-datetime [presentation]="showTime?'date-time':'date'" color="success" display-format="DD.MM.YYYY HH:mm"
+            (ngModelChange)="dateChange($event)" hourCycle="12h">
+          </ion-datetime>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header" class="fs14 mt20" lines="full">
+          <ion-label slot="start" class="grey-text">Time</ion-label>
+          <div class="time-div m0" slot="end" [hidden]="selectTime" (click)="onClick()">
+            6:15 PM
+          </div>
+        </ion-item>
+        <div slot="content" class="ion-padding mh245">
+          <ion-item class="no-padding" lines="none">
+            <ion-label position="stacked" class="grey-text">10 AM - 3 PM</ion-label>
+            <div class="r">
+              <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]" class="time-div mtb">10:00 AM</div>
+            </div>
+          </ion-item>
+          <ion-item class="no-padding" lines="none">
+            <ion-label position="stacked" class="grey-text">6 AM - 3 PM</ion-label>
+            <div class="r">
+              <div *ngFor="let item of [1,2,3]" class="time-div mtb">6:00 AM</div>
+            </div>
+          </ion-item>
+          <ion-item class="no-padding" lines="none">
+            <ion-label position="stacked" class="grey-text">1 AM - 8 PM</ion-label>
+            <div class="r">
+              <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]" class="time-div mtb">1:00 AM</div>
+            </div>
+          </ion-item>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="third">
+        <ion-item slot="header" class="fs14 mt20" lines="full">
+          <ion-label slot="start" class="grey-text">Number of seats</ion-label>
           <ion-label slot="end" class="fd-row fs12">
             <ion-icon id="seat" name="seat"></ion-icon>
-            x {{seat}}
+            x {{selectedSeats}}
           </ion-label>
         </ion-item>
-      </div>
-    </ion-accordion>
-    <ion-button (click)="next()" class="mb10"> Next </ion-button>
-  </ion-accordion-group>
-</form>
+        <div class="mh245 " slot="content">
+          <ion-item lines="none" [ngStyle]="{'--background':selectedSeats === seat? 'rgb(209,209,207)' : 'none'}"
+            (click)="selectSeats(seat)" class="fs14" *ngFor="let seat of [1,2,3,4,5,6,7,8,9]">
+            <ion-label slot="end" class="fd-row fs12">
+              <ion-icon id="seat" name="seat"></ion-icon>
+              x {{seat}}
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-accordion>
+      <ion-button (click)="next()" class="mb10"> Next </ion-button>
+    </ion-accordion-group>
+  </form>
 </ion-content>
