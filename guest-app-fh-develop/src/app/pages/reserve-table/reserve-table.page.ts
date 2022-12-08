@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, Directive, OnInit, ViewChild } from '@angular/core';
 import { IonAccordionGroup, IonItem } from '@ionic/angular';
 
@@ -8,13 +9,21 @@ import { IonAccordionGroup, IonItem } from '@ionic/angular';
 })
 export class ReserveTablePage implements OnInit {
   [x: string]: any;
-
+  resTable:FormGroup;
   selectedSeats: number = 1
   selectedLocation: string = 'Royal Island'
   showTime: boolean = false
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
 
-  constructor() { }
+  constructor( private fb:FormBuilder) { 
+this.resTable=this.fb.group({
+
+
+  
+})
+
+
+  }
 
   ngOnInit() {
 
