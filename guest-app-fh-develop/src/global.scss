@@ -45,11 +45,17 @@ ion-content {
   flex-direction: column !important;
   align-items: center !important;
 }
-
+.w80{
+  width: 80%;
+}
 .fd-row {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
+}#close-icon{
+  position: absolute;
+  right: 5px;
+  top: 10px;
 }
 
 .fs10 {
@@ -121,6 +127,18 @@ ion-content {
 }
 .m0{
   margin: 0 !important;
+}#btn-outline{
+  border: 2px solid black;
+  border-radius: 0px 0px 24px 0px;
+  --border: 2px solid black;
+  --border-radius: 0px 0px 24px 0px;
+  height: 45px;
+
+}.btn-black{
+    background: black;
+    border-radius: 0 0 24px 0;
+    height: 45px;
+
 }
 .ml5 {
   margin-left: 5px;

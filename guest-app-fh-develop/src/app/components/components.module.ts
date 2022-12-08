@@ -1,3 +1,4 @@
+import { CancelOrderComponent } from './cancel-order/cancel-order.component';
 import { EditComponent } from './edit-reservation/edit-reservation.component';
 import { SendingReservartionReqComponent } from './sending-reservartion-req/sending-reservartion-req.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     ItemDetailsComponent,
     SendingReservartionReqComponent,
     EditComponent,
+    CancelOrderComponent
   ],
   imports: [
     CommonModule,
@@ -27,8 +29,8 @@ import { FormsModule } from '@angular/forms';
     MenuItemsComponent,
     ItemDetailsComponent,
     SendingReservartionReqComponent,
-    EditComponent
-
+    EditComponent,
+    CancelOrderComponent
   ],
 })
 export class ComponentsModule { }

@@ -1,0 +1,13 @@
+.container {
+    height: 45%;
+    min-height: 40%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 24px;
+    justify-content: space-around;
+    align-items: flex-start !important;
+    ion-button{
+        width: 100%;
+    }
+}

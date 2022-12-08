@@ -1,0 +1,18 @@
+<div class="container app-bg1 ion-padding fd-col">
+  <ion-label class="fs12 fw400 w80">You cannot edit this reservation because the merchant has confirmed your order.
+  </ion-label>
+  <ion-label class="fs20 fw600">Are you sure to cancel the reservation?</ion-label>
+
+  <ion-button class="btn-black light-text fs14 fw600"  fill="clear">
+    Keep Reservation
+  </ion-button>
+  <ion-button color="dark" class="dark-text fs14 fw600" id="btn-outline" fill="clear">
+    Cancel the Order
+  </ion-button>
+
+  <ion-buttons id="close-icon">
+    <ion-button (click)="global.closeModal()">
+      <ion-icon class="dark-text" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</div>
