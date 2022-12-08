@@ -1,5 +1,3 @@
-import { CancelOrderComponent } from './../../components/cancel-order/cancel-order.component';
-import { ReserveTablePage } from './../reserve-table/reserve-table.page';
 import { EditComponent } from '../../components/edit-reservation/edit-reservation.component';
 import { Router } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
@@ -15,7 +13,6 @@ export class OrderDetailsPage implements OnInit {
   isCompleted:boolean = false
   constructor(private global: GlobalService, private route: Router) {
 
-this.global.presentModal(CancelOrderComponent,{})
     const interval = setInterval(() => {
       this.progress += 0.0002;
       if (this.progress >= 0.5) {

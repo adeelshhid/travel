@@ -72,8 +72,8 @@
     </div>
   </ion-accordion>
   <div class="btns-div">
-    <ion-button (click)="next()" > Confirm </ion-button>
-    <ion-button (click)="next()" id="btn-outline"> Cancel the order </ion-button>
+    <ion-button  class="w100 fs14 fw600 light-text"(click)="global.closeModal()" > Confirm </ion-button>
+    <ion-button fill="clear" class="w100 fs14 fw600 dark-text" (click)="cancelOrder()" id="btn-outline"> Cancel the order </ion-button>
   </div>
 </ion-accordion-group>
 </div>  

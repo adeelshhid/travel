@@ -43,10 +43,9 @@
   .btns-div{
     text-align: center;
 
-    ion-button {
+    ion-button:first-child {
       --background: #1e1d20;
       height: 45px;
-      width: 90%;
       --border-radius: 2px 2px 22px 2px;
       margin: 5% 0 15% 0;
     }

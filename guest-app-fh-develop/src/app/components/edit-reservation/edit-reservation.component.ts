@@ -1,3 +1,4 @@
+import { CancelOrderComponent } from './../cancel-order/cancel-order.component';
 import { GlobalService } from './../../services/global.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonAccordionGroup } from '@ionic/angular';
@@ -37,5 +38,8 @@ selectTime: any;
   next(){
     this.global.navigate('reserve-table/customer-info')
   }
-
+  cancelOrder(){
+    this.global.closeModal()
+    this.global.presentModal(CancelOrderComponent,{})
+  }
 }
