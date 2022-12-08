@@ -1,7 +1,8 @@
+import { ReserveTablePage } from './../reserve-table/reserve-table.page';
+import { EditComponent } from '../../components/edit-reservation/edit-reservation.component';
 import { Router } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.page.html',
@@ -37,6 +38,10 @@ export class OrderDetailsPage implements OnInit {
     if (this.progress == 0.50) {
       this.isConfirmed = true
     }
+  }
+
+  editRes(){
+    this.global.presentModal(EditComponent,{})
   }
 
 }
