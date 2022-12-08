@@ -1,3 +1,4 @@
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 import { ContactUsComponent } from './../../components/contact-us/contact-us.component';
 import { EditComponent } from '../../components/edit-reservation/edit-reservation.component';
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ export class OrderDetailsPage implements OnInit {
   public progress = 0;
   isConfirmed: boolean = false
   isCompleted:boolean = false
-  constructor(private global: GlobalService, private route: Router) {
+  constructor(private global: GlobalService, private ss:SocialSharing) {
 
     const interval = setInterval(() => {
       this.progress += 0.0002;
@@ -46,4 +47,8 @@ export class OrderDetailsPage implements OnInit {
   contactUs(){
     this.global.presentModal(ContactUsComponent,{})
   }
+
+  share(){
+    this.ss.share('Travel App','Test')
+    }
 }

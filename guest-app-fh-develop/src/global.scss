@@ -29,6 +29,20 @@ ion-content {
   --background: #dfdfdb !important;
 }
 
+@supports (-webkit-touch-callout: none) {
+  ion-header{
+    padding-top:10px ;
+  }
+  /* CSS specific to iOS devices */ 
+}
+
+@supports not (-webkit-touch-callout: none) {
+  ion-header{
+    padding-top:10px ;
+  }
+  /* CSS for other than iOS devices */ 
+}
+
 .no-scroll {
   --overflow: hidden !important;
 }
