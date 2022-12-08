@@ -1,3 +1,4 @@
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CancelOrderComponent } from './cancel-order/cancel-order.component';
 import { EditComponent } from './edit-reservation/edit-reservation.component';
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SendingReservartionReqComponent,
     EditComponent,
     CancelOrderComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AccountSettingComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SendingReservartionReqComponent,
     EditComponent,
     CancelOrderComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AccountSettingComponent
   ],
 })
 export class ComponentsModule { }
