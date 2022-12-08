@@ -1,3 +1,4 @@
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CancelOrderComponent } from './cancel-order/cancel-order.component';
 import { EditComponent } from './edit-reservation/edit-reservation.component';
 import { SendingReservartionReqComponent } from './sending-reservartion-req/sending-reservartion-req.component';
@@ -8,7 +9,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,19 +19,22 @@ import { FormsModule } from '@angular/forms';
     ItemDetailsComponent,
     SendingReservartionReqComponent,
     EditComponent,
-    CancelOrderComponent
+    CancelOrderComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    ReactiveFormsModule
   ],
   exports: [RestaurantsComponent, RestaurantDetailComponent,
     MenuItemsComponent,
     ItemDetailsComponent,
     SendingReservartionReqComponent,
     EditComponent,
-    CancelOrderComponent
+    CancelOrderComponent,
+    ContactUsComponent
   ],
 })
 export class ComponentsModule { }

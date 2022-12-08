@@ -1,3 +1,4 @@
+import { ContactUsComponent } from './../../components/contact-us/contact-us.component';
 import { EditComponent } from '../../components/edit-reservation/edit-reservation.component';
 import { Router } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
@@ -42,4 +43,7 @@ export class OrderDetailsPage implements OnInit {
     this.global.presentModal(EditComponent,{})
   }
 
+  contactUs(){
+    this.global.presentModal(ContactUsComponent,{})
+  }
 }

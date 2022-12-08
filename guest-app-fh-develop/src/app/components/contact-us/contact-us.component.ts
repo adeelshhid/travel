@@ -1,3 +1,5 @@
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  customerForm: FormGroup
+  constructor(public global: GlobalService) {
 
-  ngOnInit() {}
+
+
+  }
+
+  ngOnInit() { }
 
 }
