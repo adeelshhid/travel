@@ -8,8 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemDetailsComponent implements OnInit {
   @Input() data:any
-  constructor(public global :GlobalService) { }
+  constructor(public global :GlobalService) {
+   }
 
   ngOnInit() {}
 
+  ngAfterViewInit(){
+    console.log(this.data)
+
+  }
 }

@@ -1,3 +1,4 @@
+import { NavigationExtras } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -52,5 +53,14 @@ export class RestaurantDetailComponent implements OnInit {
   closeMenuItems(event) {
     this.menuItems = event
     console.log(event)
+  }
+  async reserveTable(){
+    let extras:NavigationExtras = {
+      state:{
+        data: this.data
+      }
+    }
+    await this.global.closeModal()
+    this.global.navigateWithExtras('reserve-table',extras)
   }
 }

@@ -1,3 +1,4 @@
+import { SendingReservartionReqComponent } from './sending-reservartion-req/sending-reservartion-req.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { MenuItemsComponent } from './menu-items/menu-items.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -10,12 +11,21 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [RestaurantsComponent,RestaurantDetailComponent,MenuItemsComponent,ItemDetailsComponent],
+  declarations: [RestaurantsComponent, RestaurantDetailComponent,
+    MenuItemsComponent,
+    ItemDetailsComponent,
+    SendingReservartionReqComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule
   ],
-  exports:[RestaurantsComponent,RestaurantDetailComponent,MenuItemsComponent,ItemDetailsComponent],
+  exports: [RestaurantsComponent, RestaurantDetailComponent,
+    MenuItemsComponent,
+    ItemDetailsComponent,
+    SendingReservartionReqComponent,
+
+  ],
 })
 export class ComponentsModule { }

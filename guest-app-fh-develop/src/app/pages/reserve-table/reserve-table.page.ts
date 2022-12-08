@@ -1,3 +1,5 @@
+import { SendingReservartionReqComponent } from './../../components/sending-reservartion-req/sending-reservartion-req.component';
+import { GlobalService } from './../../services/global.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, Directive, OnInit, ViewChild } from '@angular/core';
 import { IonAccordionGroup, IonItem } from '@ionic/angular';
@@ -9,18 +11,20 @@ import { IonAccordionGroup, IonItem } from '@ionic/angular';
 })
 export class ReserveTablePage implements OnInit {
   [x: string]: any;
-  resTable:FormGroup;
+  data: any
+  resTable: FormGroup;
   selectedSeats: number = 1
   selectedLocation: string = 'Royal Island'
   showTime: boolean = false
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
 
-  constructor( private fb:FormBuilder) { 
-this.resTable=this.fb.group({
+  constructor(private fb: FormBuilder, private global: GlobalService) {
+    this.data = this.global.getNavigationExtras()?.data
+    this.resTable = this.fb.group({
 
 
-  
-})
+
+    })
 
 
   }
@@ -39,6 +43,10 @@ this.resTable=this.fb.group({
     } else {
       this.accordionGroup.value = 'third';
     }
+  }
+
+  sendingReq(){
+    this.global.presentModal(SendingReservartionReqComponent,{})
   }
 }
 

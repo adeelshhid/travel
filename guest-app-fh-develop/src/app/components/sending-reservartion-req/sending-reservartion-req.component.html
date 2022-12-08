@@ -1,0 +1,23 @@
+  <div class="container app-bg1 dark-text ion-text-center fs16 fw600">
+   <div *ngIf="!isSent" id="sending">
+    <img src="../../../assets/icon/send.png" alt="">
+    Sending...
+   </div>
+   <div *ngIf="isSent" class="ion-padding fd-col">
+    <div class="ion-padding lbls">
+      <img src="../../../assets/icon/send.png" alt="">
+    <span class="mt10">Request sent to the restaurant</span>
+    <span class="mt10">Fri | Oct 30, 2022 at 6:15 PM</span>
+    <span class="mv10">3 seats</span>
+    </div>
+
+    <ion-button class="dark-btn light-text" expand="block" fill="clear">
+      Got It
+    </ion-button>
+    <ion-buttons>
+      <ion-button class="dark-text" fill="clear">
+        View My Order
+      </ion-button>
+    </ion-buttons>
+   </div>
+  </div>
