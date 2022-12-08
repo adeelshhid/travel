@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, OnInit, ViewChild } from '@angular/core';
+import { IonAccordionGroup, IonItem } from '@ionic/angular';
 
 @Component({
   selector: 'app-reserve-table',
@@ -6,15 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reserve-table.page.scss'],
 })
 export class ReserveTablePage implements OnInit {
+  [x: string]: any;
 
-  selectTime:boolean=false
+  selectedSeats: number = 1
+  selectedLocation: string = 'Royal Island'
+  showTime: boolean = false
+  @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
-  onClick(){
-    this.selectTime=true 
-  }
 
+
+  selectSeats(seats) {
+    this.selectedSeats = seats
+    console.log(this.accordionGroup.value)
+    if (this.accordionGroup.value === 'third') {
+      this.accordionGroup.value = undefined;
+    } else {
+      this.accordionGroup.value = 'third';
+    }
+  }
 }
+
+
