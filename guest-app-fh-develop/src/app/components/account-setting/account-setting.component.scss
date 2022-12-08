@@ -40,6 +40,7 @@ ion-buttons{
     ion-avatar{
         height: 24px;
         width: 24px;
+      transform: translate(-10px, 6px);
         
 
     }.name-div{
@@ -52,6 +53,7 @@ ion-buttons{
         display: flex;
         justify-content: center;
         align-items: center;
+        transform: translate(-19px, 8px);
     }
   }
   .lbl-div {

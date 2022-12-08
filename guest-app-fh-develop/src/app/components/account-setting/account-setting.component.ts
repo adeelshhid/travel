@@ -1,3 +1,4 @@
+import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountSettingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public global : GlobalService) { }
 
   ngOnInit() {}
 

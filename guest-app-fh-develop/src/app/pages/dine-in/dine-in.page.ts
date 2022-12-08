@@ -1,3 +1,4 @@
+import { AccountSettingComponent } from './../../components/account-setting/account-setting.component';
 import { NavigationExtras } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
@@ -74,14 +75,16 @@ export class DineInPage implements OnInit {
       location: 'Pakistan'
     }
   ]
-
+  
   date: Date = new Date()
   constructor(private global: GlobalService,
     private ngZone: NgZone) { }
 
   ngOnInit() {
   }
-
+  accountSettings(){
+    this.global.presentModal(AccountSettingComponent,{})
+  }
   filterRes() {
     let extras: NavigationExtras = {
       state: {
