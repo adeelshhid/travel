@@ -20,6 +20,7 @@ export class SendingReservartionReqComponent implements OnInit {
     this.global.closeModal()
     this.global.navigate('dine-in')
   }
+  
   viewOrder(){
     this.global.closeModal()
     this.global.navigate('order-details')

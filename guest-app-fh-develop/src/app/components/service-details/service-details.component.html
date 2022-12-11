@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="banner-img h30">
+    <img [src]="data?.img" alt="">
+    <ion-buttons>
+      <ion-button (click)="global.closeModal()">
+        <ion-icon color="light" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div class="item-info ion-padding">
+    <div>
+      <b class="fs18 fw600">{{data?.name}}</b><br>
+      <hr>
+      <span class="fs14 fw400 dark-text">{{data?.desc}}</span>
+    </div>
+    <ion-label class="fs20 fw400">{{data?.price}}</ion-label>
+  </div>
+</ion-content>

@@ -27,6 +27,9 @@
 
 ion-content {
   --background: #dfdfdb !important;
+  ion-button{
+    text-transform: capitalize !important;
+  }
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -220,9 +223,14 @@ ion-content {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
-  align-items: center !important;
+  align-items: center!important;
 }
-
+.spb2{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
 .banner-img {
   height: 25%;
   width: 100%;
@@ -264,6 +272,9 @@ ion-content {
 
 .padding {
   padding: 10px 0 0 0 !important;
+}
+.plr{
+  padding: 0 10px !important;
 }
 
 .pr5 {

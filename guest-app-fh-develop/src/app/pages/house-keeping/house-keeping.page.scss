@@ -1,0 +1,48 @@
+ion-header {
+    ion-toolbar {
+        --background: #dfdfdb;
+
+        ion-buttons {
+            position: absolute;
+            background: none;
+        }
+
+        ion-icon {
+            font-size: 30px;
+            margin: 5px 0 0 0;
+        }
+
+        ion-label {
+            font-size: 16px;
+        }
+    }
+}
+ion-content{
+    .outer-div{
+        .item-div{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            .icon-div{
+          height: 50px;
+          width: 50px;
+          background: #716D75;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          ion-icon{
+            color: #DFDFDB;
+            height: 32px;
+            width: 32px;
+          }
+            }.lbls-div{
+                display: flex;
+                flex-direction: column;
+                    max-width: 285px;
+                    overflow: visible;
+                    
+            }
+        }
+    }
+}

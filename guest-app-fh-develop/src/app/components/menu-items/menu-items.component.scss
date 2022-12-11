@@ -1,45 +1,44 @@
 ion-header {
-    ion-toolbar {
-      --background: #dfdfdb;
-      ion-icon {
-        font-size: 30px;
-      }
-      ion-label {
-        font-size: 16px;
-      }
+  ion-toolbar {
+    --background: #dfdfdb;
+    ion-icon {
+      font-size: 30px;
+    }
+    ion-label {
+      font-size: 16px;
     }
   }
-  ion-list-header {
-    border-bottom: 1px solid #c2c3ca;
-  }
-  ion-list {
-    background-color: #dfdfdb;
+}
+ion-list-header {
+  border-bottom: 1px solid #c2c3ca;
+}
+ion-list {
+  background-color: #dfdfdb;
 
-    .item-div {
-      background: #dfdfdb;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+  .item-div {
+    background: #dfdfdb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-      .img-container {
+    .img-container {
+      height: 80px;
+      width: 70px;
+      border-radius: 4px;
+
+      img {
         height: 80px;
         width: 70px;
-        border-radius: 4px;
-
-        img {
-          height: 80px;
-          width: 70px;
-          object-fit: cover;
-        }
-      }
-
-      p {
-        overflow: visible;
-        max-width: 250px;
+        object-fit: cover;
       }
     }
-  }
 
+    p {
+      overflow: visible;
+      max-width: 250px;
+    }
+  }
+}
 
 .fd-col {
   display: flex;
@@ -96,4 +95,3 @@ ion-header {
 .text-wrap {
   overflow: visible;
 }
-

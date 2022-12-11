@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'dine-in',
+    redirectTo: '/house-keeping',
     pathMatch: 'full'
   },
   {
@@ -27,7 +27,23 @@ const routes: Routes = [
   {
     path: 'reserve-table',
     loadChildren: () => import('./pages/reserve-table/reserve-table.module').then( m => m.ReserveTablePageModule)
-  }
+  },
+  {
+    path: 'wellbeing',
+    loadChildren: () => import('./pages/wellbeing/wellbeing.module').then( m => m.WellbeingPageModule)
+  },
+  {
+    path: 'our-services',
+    loadChildren: () => import('./pages/our-services/our-services.module').then( m => m.OurServicesPageModule)
+  },
+  {
+    path: 'reserve-spot',
+    loadChildren: () => import('./pages/reserve-spot/reserve-spot.module').then( m => m.ReserveSpotPageModule)
+  },
+  {
+    path: 'house-keeping',
+    loadChildren: () => import('./pages/house-keeping/house-keeping.module').then( m => m.HouseKeepingPageModule)
+  },
 ];
 
 @NgModule({

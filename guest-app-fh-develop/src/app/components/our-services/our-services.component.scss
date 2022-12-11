@@ -1,0 +1,30 @@
+ion-list-header {
+    border-bottom: 1px solid #c2c3ca;
+  }
+  ion-list {
+    background-color: #dfdfdb;
+
+    .item-div {
+      background: #dfdfdb;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .img-container {
+        height: 80px;
+        width: 70px;
+        border-radius: 4px;
+
+        img {
+          height: 80px;
+          width: 70px;
+          object-fit: cover;
+        }
+      }
+
+      p {
+        overflow: visible;
+        max-width: 250px;
+      }
+    }
+  }

@@ -1,0 +1,37 @@
+<div class="bottom-main-div">
+  <div class="filters-div ion-padding" *ngIf="sortFilters">
+    <div class="fd-row">
+      <ion-label>All Filter</ion-label>
+      <ion-label class="padding-left"> |</ion-label>
+    </div>
+    <div>
+      <ion-label>Price</ion-label>
+      <ion-icon name="chevron-down"></ion-icon>
+    </div>
+    <div>
+      <ion-label>Distance</ion-label>
+      <ion-icon name="chevron-down"></ion-icon>
+    </div>  
+  </div>
+  <ion-list>
+    <div class="restaurant-info fd-row ion-padding" *ngFor="let item of resorts" (click)="resDetails(item)">
+      <img [src]="item?.img" />
+      <div class="resturant-details ml10">
+        <div class="restaurant-name  spb2">
+          <ion-label class="fw700">{{item?.name}}</ion-label>
+          <span class="fs10 fw300 ml10">{{item?.distance}}</span>
+        </div>
+        <br />
+        <div>
+          <ion-chip *ngFor="let type of item?.types">
+            <ion-label>{{type}}</ion-label>
+          </ion-chip>
+        </div>
+        <br />
+        <div class="res-des fs12 ion-text-wrap">
+          {{item.desc}}
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</div>

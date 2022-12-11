@@ -1,0 +1,68 @@
+.bottom-main-div {
+    overflow-y: scroll;
+
+    .filters-div {
+        display: flex;
+        overflow-x: scroll;
+        align-items: flex-start;
+        gap: 16px;
+
+        div {
+            display: flex;
+            align-items: center;
+            min-width: 60px;
+            width: auto;
+            overflow: visible;
+            white-space: pre;
+
+            ion-label {
+                color: #1e1d20;
+                font-size: 12px;
+            }
+
+            ion-icon {}
+        }
+    }
+
+    ion-list {
+        background-color: #dfdfdb;
+
+        .restaurant-info{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start !important;
+            .restaurant-detail {
+
+                .restaurant-name {
+                    
+                    ion-label {
+                        font-size: 14px;
+                    }
+                }.res-des{
+                    max-width: 209px;
+                    overflow: visible !important;
+                    height: auto;
+                }
+            }
+
+            img {
+                height: 150px;
+                width: 120px;
+                border-radius: 4px;
+                object-fit: cover;
+            }
+
+            ion-chip {
+                width: fit-content;
+                height: 16px;
+                font-size: 10px;
+                background: rgba(30, 29, 32, 0.05);
+                border-radius: 4px;
+                color: #716d75;
+                font-weight: 400;
+            }
+
+            ion-text {}
+        }
+    }
+}

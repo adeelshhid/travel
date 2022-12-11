@@ -1,0 +1,47 @@
+<ion-list-header>
+  <ion-label class="fs16 dark-text fw700">Body therapy</ion-label>
+</ion-list-header>
+<ion-list>
+  <div class="item-div ion-padding" *ngFor="let item of arr" (click)="itemDetails(item)">
+    <div>
+      <ion-label class="dark-text fs14 fw600 mt-5">{{item?.name}}</ion-label>
+      <p class="fw400 fs14 dark-text mt-5 ion-text-wrap">
+        {{item.desc}}
+      </p>
+      <ion-text class="fw400 dark-text fs14 mt-5"> {{item?.price}} </ion-text>
+    </div>
+    <div class="img-container">
+      <img [src]="item?.img" />
+    </div>
+  </div>
+  <ion-list-header>
+    <ion-label class="fs16 dark-text fw700">Salon</ion-label>
+  </ion-list-header>
+  <div class="item-div ion-padding" *ngFor="let item of arr2" (click)="itemDetails(item)">
+    <div>
+      <ion-label class="dark-text fs14 fw600 mt-5">{{item?.name}}</ion-label>
+      <p class="fw400 fs14 dark-text mt-5 ion-text-wrap">
+        {{item.desc}}
+      </p>
+      <ion-text class="fw400 dark-text fs14 mt-5"> {{item?.price}} </ion-text>
+    </div>
+    <div class="img-container">
+      <img [src]="item?.img" />
+    </div>
+  </div>
+  <ion-list-header>
+    <ion-label class="fs16 dark-text fw700">Beauty</ion-label>
+  </ion-list-header>
+  <div *ngFor="let item of arr3" class="item-div ion-padding" (click)="itemDetails(item)">
+    <div>
+      <ion-label class="dark-text fs14 fw600 mt-5">{{item?.name}}</ion-label>
+      <p class="fw400 fs14 dark-text mt-5 ion-text-wrap">
+        {{item.desc}}
+      </p>
+      <ion-text class="fw400 dark-text fs14 mt-5"> {{item?.price}} </ion-text>
+    </div>
+    <div class="img-container">
+      <img [src]="item?.img" />
+    </div>
+  </div>
+</ion-list>

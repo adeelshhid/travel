@@ -1,3 +1,9 @@
+import { HItemDetailsComponent } from './h-item-details/h-item-details.component';
+import { SendingReservationOutletComponent } from './sending-reservation-outlet/sending-reservation-outlet.component';
+import { ServiceDetailsComponent } from './service-details/service-details.component';
+import { OurServicesComponent } from './our-services/our-services.component';
+import { ResortDetailComponent } from './resort-detail/resort-detail.component';
+import { ResortsComponent } from './resorts/resorts.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CancelOrderComponent } from './cancel-order/cancel-order.component';
@@ -22,7 +28,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditComponent,
     CancelOrderComponent,
     ContactUsComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    ResortsComponent,
+    ResortDetailComponent,
+    OurServicesComponent,
+    ServiceDetailsComponent,
+    SendingReservationOutletComponent,
+    HItemDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +49,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditComponent,
     CancelOrderComponent,
     ContactUsComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    ResortsComponent,
+    ResortDetailComponent,
+    OurServicesComponent,
+    ServiceDetailsComponent,
+    SendingReservationOutletComponent,
+    HItemDetailsComponent
   ],
 })
 export class ComponentsModule { }
