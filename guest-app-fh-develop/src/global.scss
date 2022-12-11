@@ -27,23 +27,23 @@
 
 ion-content {
   --background: #dfdfdb !important;
-  ion-button{
+  ion-button {
     text-transform: capitalize !important;
   }
 }
 
 @supports (-webkit-touch-callout: none) {
-  ion-header{
-    padding-top:10px ;
+  ion-header {
+    padding-top: 10px;
   }
-  /* CSS specific to iOS devices */ 
+  /* CSS specific to iOS devices */
 }
 
 @supports not (-webkit-touch-callout: none) {
-  ion-header{
-    padding-top:10px ;
+  ion-header {
+    padding-top: 10px;
   }
-  /* CSS for other than iOS devices */ 
+  /* CSS for other than iOS devices */
 }
 
 .no-scroll {
@@ -53,13 +53,15 @@ ion-content {
   color: #1E1D20;
 }
 .dark-btn {
-
-  background: #1E1D20;
+  background: #1e1d20;
   border-radius: 2px 2px 22px 2px;
+<<<<<<< Updated upstream
 
 }.add-sub{
   height: 40px;
   width: 40px;
+=======
+>>>>>>> Stashed changes
 }
 
 .fd-col {
@@ -67,22 +69,23 @@ ion-content {
   flex-direction: column !important;
   align-items: center !important;
 }
-.w80{
+.w80 {
   width: 80%;
 }
-.w100{
+.w100 {
   width: 100%;
 }
 .fd-row {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
-}#close-icon{
+}
+#close-icon {
   position: absolute;
   right: 5px;
   top: 10px;
 }
-.fs24{
+.fs24 {
   font-size: 24px;
 }
 .fs10 {
@@ -109,7 +112,7 @@ ion-content {
   font-size: 20px !important;
 }
 
-.fs20{
+.fs20 {
   font-size: 20px;
 }
 .green-text {
@@ -117,7 +120,7 @@ ion-content {
 }
 
 .gray-text {
-  color: #716D75 !important;
+  color: #716d75 !important;
 }
 
 .green-bg {
@@ -155,20 +158,20 @@ ion-content {
 .float-right {
   float: right;
 }
-.m0{
+.m0 {
   margin: 0 !important;
-}#btn-outline{
+}
+#btn-outline {
   border: 2px solid black;
   border-radius: 0px 0px 24px 0px;
   --border: 2px solid black;
   --border-radius: 0px 0px 24px 0px;
   height: 45px;
-
-}.btn-black{
-    background: black;
-    border-radius: 0 0 24px 0;
-    height: 45px;
-
+}
+.btn-black {
+  background: black;
+  border-radius: 0 0 24px 0;
+  height: 45px;
 }
 .ml5 {
   margin-left: 5px;
@@ -237,9 +240,9 @@ ion-content {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
-  align-items: center!important;
+  align-items: center !important;
 }
-.spb2{
+.spb2 {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
@@ -248,10 +251,12 @@ ion-content {
 .banner-img {
   height: 25%;
   width: 100%;
-  background: linear-gradient(180deg,
-      rgba(0, 0, 0, 0.05) 0%,
-      rgba(0, 0, 0, 0.175) 20.04%,
-      rgba(0, 0, 0, 0) 0%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.175) 20.04%,
+    rgba(0, 0, 0, 0) 0%
+  );
 
   img {
     height: 95%;
@@ -281,13 +286,13 @@ ion-content {
 }
 
 .grey-text {
-  color: #716D75 !important;
+  color: #716d75 !important;
 }
 
 .padding {
   padding: 10px 0 0 0 !important;
 }
-.plr{
+.plr {
   padding: 0 10px !important;
 }
 
@@ -296,23 +301,23 @@ ion-content {
 }
 
 .app-bg {
-  background: #EEEEEE;
+  background: #eeeeee;
 }
 
 .app-bg1 {
-  background: #DFDFDB;
+  background: #dfdfdb;
 }
-.mh245{
+.mh245 {
   max-height: 245px;
 }
-.mh200{
+.mh200 {
   max-height: 200px;
 }
-.no-padding{
-  --start-padding:0px;
-  --inner-padding-end:0px;
+.no-padding {
+  --start-padding: 0px;
+  --inner-padding-end: 0px;
 }
-.mtb{
+.mtb {
   margin-top: 10px;
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }

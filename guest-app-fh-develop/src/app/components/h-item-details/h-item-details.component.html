@@ -1,17 +1,59 @@
 <ion-content>
-  <div class="banner-icon ">
-    <ion-icon  name="p-adopter" class="main-icon"></ion-icon>
+  <div class="banner-icon">
+    <ion-icon [name]="data.icon" class="main-icon"></ion-icon>
     <ion-buttons>
-      <ion-button >
+      <ion-button (click)="global.closeModal()">
         <ion-icon color="light" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
   </div>
   <div class="item-info ion-padding">
     <div>
-      <b class="fs18 fw600">Plug adaptor</b><br>
-      <hr>
-      <span class="fs14 fw400 gray-text">Full line of universal travel adapters and iPhone chargers</span>
+      <b class="fs18 fw600">{{ data?.name }}</b
+      ><br />
+      <hr />
+      <span class="fs14 fw400 gray-text mt10">{{ data?.desc }}</span>
     </div>
+  </div>
+  <div class="ion-padding">
+    <div class="foodSel">
+      <div class="food-lbl" *ngIf="data?.isFoodSelection">
+        <ion-label class="fs18 fw600">Select your food</ion-label>
+        <ion-label slot="end" class="green-text fs10 fw700">Required</ion-label>
+      </div>
+      <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <ion-text class="ml10"> 0 </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+      </div>
+      <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <ion-text class="ml10"> 0 </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+      </div>
+      <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <ion-text class="ml10"> 0 </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+      </div>
+      <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
+        <ion-icon name="remove-circle-outline"></ion-icon>
+        <ion-text class="ml10"> 0 </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+      </div>
+    </div>
+    <br />
+    <ion-label class="fs18 fw600 m">Special Instructions</ion-label>
+    <br />
+    <br />
+    <ion-textarea
+      rows="3"
+      placeholder="Add a note"
+      autoGrow="false"
+    ></ion-textarea>
+  </div>
+  <div class="line"></div>
+  <div class="btm-btn ion-padding">
+    <ion-button (click)="submit()"> Add to order </ion-button>
   </div>
 </ion-content>

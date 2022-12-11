@@ -1,0 +1,86 @@
+ion-header {
+    ion-toolbar {
+      --background: #dfdfdb;
+      ion-icon {
+        font-size: 30px;
+      }
+      ion-label {
+        font-size: 16px;
+      }
+    }
+  }
+  ion-content {
+    .outer-main {
+      .rest-details {
+        div {
+        }
+      }
+      .cust-detail {
+        border: 1px solid #c2c3ca;
+        height: fit-content;
+        width: fit-content;
+        padding: 35px 10px 35px 10px;
+        ion-label {
+        }
+        ion-row {
+          ion-col {
+            ion-item {
+              color: #94959c;
+              ion-label {
+              }
+              ion-input {
+                width: 100%;
+              }
+            }
+          }
+        }
+        ion-item {
+          color: #94959c;
+          overflow: visible !important;
+          --padding-start: 0px !important;
+          --inner-padding-end: 0px !important;
+          ion-input {
+            color: #1e1d20 !important;
+          }
+        }
+      }
+      .checkbox-item {
+        --padding-start: 0px !important;
+        --inner-padding-end: 0px !important;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        ion-checkbox {
+          margin-right: 5px;
+          --background-checked: #a5b026;
+          --border-color-checked: #a5b026;
+          --border-color: #c2c3ca;
+          min-height: 20px;
+          min-width: 20px;
+        }
+        p {
+          max-width: 340px;
+          overflow: visible;
+          font-size: 14px;
+          font-weight: 400;
+          padding: 0 5px;
+        }
+      }
+      .corner-btn {
+        position: absolute;
+        right: 0 !important;
+        bottom: 0 !important;
+        height: 120px;
+        width: 120px;
+        --border-radius: 60px 0px 0px 0px;
+        --background: #1e1d20;
+        color: #ffffff;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        white-space: normal;
+        text-transform: capitalize;
+      }
+    }
+  }
+  

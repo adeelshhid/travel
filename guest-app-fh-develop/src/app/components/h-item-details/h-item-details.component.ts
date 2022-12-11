@@ -1,3 +1,4 @@
+import { NavigationExtras } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -7,10 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./h-item-details.component.scss'],
 })
 export class HItemDetailsComponent implements OnInit {
-@Input() data:any;
+  @Input() data: any;
+  constructor(public global: GlobalService) { }
 
-  constructor(public global:GlobalService) { }
+  ngOnInit() { }
 
-  ngOnInit() {}
+  submit(){
+    this.global.closeModal()
+    let extras:NavigationExtras = {
+      state:{
+        data:this.data
+      }
+    }
+    this.global.navigateWithExtras('/submit-now',extras)
+  }
 
 }

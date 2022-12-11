@@ -6,56 +6,27 @@
       </ion-button>
     </ion-buttons>
     <div class="fd-col ion-text-center">
-      <ion-icon name="bed2"></ion-icon>
-      <ion-label>Wellbeing</ion-label>
+      <ion-icon name="bed-outline"></ion-icon>
+      <ion-label>HouseKeeping</ion-label>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<div class="outer-div ion-padding mt20">
-<div class="item-div mt20">
-<div class="icon-div">
-<ion-icon  name="plug-adopter" ></ion-icon>
-</div>
-<div class="lbls-div ml10" (click)="open(item)">
-  <ion-label class="fs14 fw700">Plug adaptor</ion-label>
-  <ion-text class="fs12 ion-text-wrap grey-text">
-    Full line of universal travel adapters and iPhone chargers
-  </ion-text>
-</div>
-</div>
-<div class="item-div mt20">
-  <div class="icon-div">
-  <ion-icon  name="towel" ></ion-icon>
-  </div>
-  <div class="lbls-div ml10">
-    <ion-label class="fs14 fw700">Fresh towel set</ion-label>
-    <ion-text class="fs12 ion-text-wrap grey-text">
-      Full line of universal travel adapters and iPhone chargers
-    </ion-text>
-  </div>
-  </div>
-  <div class="item-div mt20">
-    <div class="icon-div">
-    <ion-icon  name="minibar" ></ion-icon>
-    </div>
-    <div class="lbls-div ml10">
-      <ion-label class="fs14 fw700">Mini bar refill </ion-label>
-      <ion-text class="fs12 ion-text-wrap grey-text">
-        Wine, whiskey, chips, nuts
-      </ion-text>
-    </div>
-    </div>
-    <div class="item-div mt20">
+  <div class="outer-div ion-padding mt20">
+    <div
+      class="item-div mt20"
+      *ngFor="let item of arr;let i = index"
+      (click)="open(item,i)"
+    >
       <div class="icon-div">
-      <ion-icon  name="bed-white" ></ion-icon>
+        <ion-icon [name]="item.icon"></ion-icon>
       </div>
       <div class="lbls-div ml10">
-        <ion-label class="fs14 fw700">Room issue</ion-label>
-        <ion-text class="fs12 ion-text-wrap grey-text">
-          Please write down your room issue before submit
+        <ion-label class="fs14 fw700">{{item.name}}</ion-label>
+        <ion-text class="fs12 ion-text-wrap grey-text mt5">
+          {{item.desc}}
         </ion-text>
       </div>
-      </div>
-</div>
+    </div>
+  </div>
 </ion-content>
