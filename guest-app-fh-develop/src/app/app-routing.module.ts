@@ -45,13 +45,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/house-keeping/house-keeping.module').then( m => m.HouseKeepingPageModule)
   },
   {
-<<<<<<< Updated upstream
     path: 'activity',
     loadChildren: () => import('./pages/activity/activity.module').then( m => m.ActivityPageModule)
-=======
+  },{
     path: 'submit-now',
     loadChildren: () => import('./pages/submit-now/submit-now.module').then( m => m.SubmitNowPageModule)
->>>>>>> Stashed changes
   },
 ];
 
