@@ -49,14 +49,14 @@ ion-content {
 .no-scroll {
   --overflow: hidden !important;
 }
-.gray-text{
-  color: #1E1D20;
+.gray-text {
+  color: #1e1d20;
 }
 .dark-btn {
   background: #1e1d20;
   border-radius: 2px 2px 22px 2px;
-
-}.add-sub{
+}
+.add-sub {
   height: 40px;
   width: 40px;
 }
@@ -176,7 +176,7 @@ ion-content {
 .mr5 {
   margin-right: 5px;
 }
-.count{
+.count {
   width: 20px;
   text-align: center;
 }
@@ -198,10 +198,16 @@ ion-content {
 }
 
 .inf {
-  display: inline-flex !important;
+  display: flex;
   flex-direction: row !important;
   align-content: center !important;
   align-items: center !important;
+}
+.inf2 {
+  display: flex;
+  flex-direction: row !important;
+  align-content: center !important;
+  align-items: flex-start !important;
 }
 
 .dark-text {
@@ -317,4 +323,7 @@ ion-content {
 .mtb {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.line {
+  border-top: 1px solid #c2c3ca;
 }

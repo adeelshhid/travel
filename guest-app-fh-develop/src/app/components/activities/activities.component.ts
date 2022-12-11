@@ -1,6 +1,6 @@
+import { ActivityDetailsComponent } from './../activity-details/activity-details.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
-import { ResortDetailComponent } from '../resort-detail/resort-detail.component';
 
 @Component({
   selector: 'activities',
@@ -16,6 +16,6 @@ export class ActivitiesComponent implements OnInit {
   ngOnInit() {}
   resDetails(data){
 
-this.global.presentModal(ResortDetailComponent,data)
+this.global.presentModal(ActivityDetailsComponent,data)
   }
 }

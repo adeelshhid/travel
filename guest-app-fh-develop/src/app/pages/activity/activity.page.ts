@@ -11,7 +11,7 @@ import { GlobalService } from 'src/app/services/global.service';
 export class ActivityPage implements OnInit {
   selectedPeople: any = {
     adult: {
-      count: 1
+      count: 0
     },
     child: {
       count: 0

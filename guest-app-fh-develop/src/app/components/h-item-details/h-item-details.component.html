@@ -22,24 +22,28 @@
         <ion-label slot="end" class="green-text fs10 fw700">Required</ion-label>
       </div>
       <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
-        <ion-icon name="remove-circle-outline"></ion-icon>
-        <ion-text class="ml10"> 0 </ion-text>
-        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="sub('wine')"></ion-icon>
+        <ion-text class="ml10"> {{selectedDrinks?.wine?.count}} </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10"  (click)="add('wine')"></ion-icon>
+        <ion-label class="ml10">Wine</ion-label>
       </div>
       <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
-        <ion-icon name="remove-circle-outline"></ion-icon>
-        <ion-text class="ml10"> 0 </ion-text>
-        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="sub('whisky')"></ion-icon>
+        <ion-text class="ml10"> {{selectedDrinks?.whisky?.count}} </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10" (click)="add('whisky')"></ion-icon>
+        <ion-label class="ml10">Whisky</ion-label>
       </div>
       <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
-        <ion-icon name="remove-circle-outline"></ion-icon>
-        <ion-text class="ml10"> 0 </ion-text>
-        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="sub('chips')"></ion-icon>
+        <ion-text class="ml10"> {{selectedDrinks?.chips?.count}} </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10" (click)="add('chips')"></ion-icon>
+        <ion-label class="ml10">Chips</ion-label>
       </div>
       <div class="round-btns mt20" *ngIf="data?.isFoodSelection">
-        <ion-icon name="remove-circle-outline"></ion-icon>
-        <ion-text class="ml10"> 0 </ion-text>
-        <ion-icon name="add-circle-outline" class="ml10"></ion-icon>
+        <ion-icon name="remove-circle-outline" (click)="sub('nuts')"></ion-icon>
+        <ion-text class="ml10"> {{selectedDrinks?.nuts?.count}} </ion-text>
+        <ion-icon name="add-circle-outline" class="ml10" (click)="add('nuts')"></ion-icon>
+        <ion-label class="ml10">Nuts</ion-label>
       </div>
     </div>
     <br />

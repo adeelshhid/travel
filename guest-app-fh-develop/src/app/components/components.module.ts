@@ -1,3 +1,5 @@
+import { SelectDateComponent } from './select-date/select-date.component';
+import { ActivityDetailsComponent } from './activity-details/activity-details.component';
 import { ActivitiesComponent } from './activities/activities.component';
 import { HItemDetailsComponent } from './h-item-details/h-item-details.component';
 import { SendingReservationOutletComponent } from './sending-reservation-outlet/sending-reservation-outlet.component';
@@ -36,7 +38,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServiceDetailsComponent,
     SendingReservationOutletComponent,
     HItemDetailsComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    ActivityDetailsComponent,
+    SelectDateComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +62,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServiceDetailsComponent,
     SendingReservationOutletComponent,
     HItemDetailsComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    ActivityDetailsComponent,
+    SelectDateComponent
   ],
 })
 export class ComponentsModule { }

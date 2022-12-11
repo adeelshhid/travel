@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button >
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label slot="start" class="dark-text fw600"> View Menu</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-accordion-group class="mt20 ion-padding"> 
+    <ion-accordion value="first">
+      <ion-item slot="header" class="date-item">
+        <ion-label slot="start" class="grey-text fs14 fw400">Date</ion-label>
+        <ion-label slot="end" class="green-text fs14 fw700 fd-row">Today 
+          <span  class="dark-text ml10 fs14 ">Fri | Oct 30, 2022</span>
+        </ion-label>
+      </ion-item>
+      <div slot="content">
+        <ion-datetime [presentation]="showTime?'date-time':'date'" color="success" display-format="DD.MM.YYYY HH:mm"
+          (ngModelChange)="dateChange($event)" hourCycle="12h">
+        </ion-datetime>
+      </div>
+    </ion-accordion>
+    <ion-button class="bottom-btn mb10" (click)="next()"> Next </ion-button>
+  </ion-accordion-group>
+  
+</ion-content>

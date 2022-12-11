@@ -1,0 +1,159 @@
+<ion-content>
+  <ng-container *ngIf="!menuItems">
+    <!-- Banner Image -->
+    <div class="banner-img">
+      <img [src]="data?.img" alt="" />
+      <ion-buttons>
+        <ion-button (click)="global.closeModal()">
+          <ion-icon color="light" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <div class="intro ion-padding">
+      <div class="spb">
+        <div>
+          <ion-chip >
+            <ion-label>{{data?.type}}</ion-label>
+          </ion-chip>
+        </div>
+        <ion-buttons>
+          <ion-button>
+            <ion-icon class="hw24" name="bookmark"></ion-icon>
+          </ion-button>
+          <ion-button>
+            <ion-icon class="hw24" name="share-custom"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+      <br />
+      <ion-label class="fw700 fs24">{{ data?.name }}</ion-label>
+      <div class="fs10 mt10">
+        <span class="fw700 inf2 fs14">
+          <ion-icon name="location-outline"></ion-icon>&nbsp;
+          <ion-label>{{ data?.location }}</ion-label>
+        </span>
+      </div>
+    </div>
+
+    <!-- Restaurant Menu -->
+
+    <!-- Reserve a Table -->
+    <div class="ion-padding">
+      <ion-item
+        (click)="dateSel()"
+        detail="true"
+        class="item-no-padding"
+        lines="none"
+      >
+        <ion-label slot="start" class="fw700 fs16">Select a date</ion-label>
+        <ion-label class="fw400 fs12" slot="end">More dates & times</ion-label>
+      </ion-item>
+      <div class="fd-row"></div>
+      <div class="items-h-list fd-row mv10">
+        <ion-button
+          class="green-bg fs12"
+          fill="clear"
+          *ngFor="let time of times"
+        >
+          {{ time }}
+        </ion-button>
+      </div>
+      <br />
+      <hr class="bbgray" />
+    </div>
+
+    <div class="about ion-padding">
+      <ion-label class="fs16 fw700">About</ion-label><br />
+      <div class="line mt5"></div>
+      <p class="14px fw400 dark-text">
+        Our Fishing Maldives offers all-inclusive day and night fishing trips!
+        First of its kind Sail aboard our brand-new Offshore 32cc ready to take
+        you to where the fish reside. We are fully outfitted with the latest
+        navigational electronics, LED lights, amazing sound system, and fishing
+        equipments.
+      </p>
+    </div>
+
+    <!-- Information -->
+    <div class="ion-padding">
+      <ion-label class="fw700 fs16">Things to know</ion-label>
+      <div class="line mt5"></div>
+      <ul>
+        <li class="fs14 fw400">
+          Please carry you valid IDs at the time of the activity.
+        </li>
+        <li class="fs14 fw400">
+          The activity is subject to cancellation in case of bad weather.
+        </li>
+        <li class="fs14 fw400">Don’t forget to bring sun glasses /hat.</li>
+      </ul>
+      <br />
+      <div>
+        <ion-label class="fw700 fs16">Cancelation</ion-label>
+        <div class="line mt5"></div>
+        <p class="fs14 fw400 dark-text">
+          Free to cancel at least 24 hours in advance of the start date of the
+          experience.
+        </p>
+        <br>
+        <ion-label class="fs16 fw700">The outlet</ion-label>
+        <div class="line"></div>
+        <div class="item-img">
+          <img
+            src="https://i0.wp.com/samudramaldives.com/wp-content/uploads/adaaran-club-rannalhi-resort-maldives-header.jpg?resize=800%2C600&ssl=1"
+            class="mtb"
+          />
+          <div class="lbls-div mtb ml10">
+            <ion-label class="fs14 fw600">SAMUDRA MALDIVES</ion-label>
+            <span class="grey-text fs12 fw400 mt10">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia cons...
+            </span>
+            <ion-button fill="clear" class="mt10">
+              View outlet profile
+            </ion-button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <ion-label class="fs16 fw700">Where you`ll be</ion-label>
+      <img
+        id="map-placeholder"
+        src="../../../assets/icon/map-placeholder.png"
+        alt=""
+        class="mt20"
+      />
+      <ion-col size="12">
+        <ion-buttons class="float-right">
+          <ion-button color="dark" class="fs14 fw600">
+            Get Directions &nbsp;
+            <ion-icon name="direction-custom"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-col>
+      <div class="ion-padding">
+        <ion-item class="item-no-padding" lines="none">
+          <ion-label class="fs16 fw700">People also search for</ion-label>
+        </ion-item>
+        <div class="line"></div>
+        <div class="items-h-list fd-row mv10">
+          <div class="item" *ngFor="let item of items">
+            <img [src]="item?.img" alt="" />
+            <ion-label class="fs14 fw600">{{ item?.name }}</ion-label>
+            <div class="distance" >
+              <ion-label class="fs14 fw400 mt5">{{ item?.text }}
+                <span class="fs10 grey-text">{{item.distance}}</span>
+              </ion-label>
+            </div>
+          </div>
+        </div>
+        <br />
+        <hr class="bbgray" />
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="menuItems">
+    <menu-items id="slide"></menu-items>
+  </ng-container>
+</ion-content>
