@@ -49,12 +49,17 @@ ion-content {
 .no-scroll {
   --overflow: hidden !important;
 }
-
+.gray-text{
+  color: #1E1D20;
+}
 .dark-btn {
 
   background: #1E1D20;
   border-radius: 2px 2px 22px 2px;
 
+}.add-sub{
+  height: 40px;
+  width: 40px;
 }
 
 .fd-col {
@@ -120,6 +125,9 @@ ion-content {
   color: white;
 }
 
+.mv5 {
+  margin: 5px 0;
+}
 .mv10 {
   margin: 10px 0;
 }
@@ -165,7 +173,13 @@ ion-content {
 .ml5 {
   margin-left: 5px;
 }
-
+.mr5 {
+  margin-right: 5px;
+}
+.count{
+  width: 20px;
+  text-align: center;
+}
 .ml10 {
   margin-left: 10px;
 }

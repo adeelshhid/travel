@@ -1,3 +1,4 @@
+import { ActivitiesComponent } from './activities/activities.component';
 import { HItemDetailsComponent } from './h-item-details/h-item-details.component';
 import { SendingReservationOutletComponent } from './sending-reservation-outlet/sending-reservation-outlet.component';
 import { ServiceDetailsComponent } from './service-details/service-details.component';
@@ -34,7 +35,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OurServicesComponent,
     ServiceDetailsComponent,
     SendingReservationOutletComponent,
-    HItemDetailsComponent
+    HItemDetailsComponent,
+    ActivitiesComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     OurServicesComponent,
     ServiceDetailsComponent,
     SendingReservationOutletComponent,
-    HItemDetailsComponent
+    HItemDetailsComponent,
+    ActivitiesComponent
   ],
 })
 export class ComponentsModule { }

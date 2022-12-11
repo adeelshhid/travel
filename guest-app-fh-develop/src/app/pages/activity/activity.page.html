@@ -1,0 +1,123 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="back">
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="fd-col ion-text-center">
+      <ion-icon name="activity"></ion-icon>
+      <ion-label>Activity</ion-label>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="top-main-div">
+
+
+    <div class="selection-div">
+      <form FormGroup="SelectionForm">
+        <ion-accordion-group #accordionGroup class="ion-margin">
+          <ion-accordion value="first">
+            <ion-item slot="header" class="fs14">
+              <ion-label slot="start">Where to attend?</ion-label>
+              <ion-label slot="end" class="fd-row fs12">{{selectedLocation}}
+                <ion-icon name="location-outline"></ion-icon>
+              </ion-label>
+            </ion-item>
+            <div class="mh245" slot="content">
+              <ion-item lines="none"
+                [ngStyle]="{'--background':selectedLocation === location? 'rgb(209,209,207)' : 'none'}"
+                (click)="selectLocation(location)" class="fs14" *ngFor="let location of locations">
+                <ion-label slot="end" class="fd-row fs12">
+                  {{location}}
+                </ion-label>
+              </ion-item>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="second">
+            <ion-item slot="header" class="fs14">
+              <ion-label slot="start">When?</ion-label>
+              <ion-label slot="end" class="fd-row fs12">{{date | date:'E'}} | {{date | date:'mediumDate'}}
+              </ion-label>
+            </ion-item>
+            <div slot="content" class="mh245">
+              <ion-datetime [presentation]="showTime?'date-time':'date'" color="success"
+                display-format="DD.MM.YYYY HH:mm" (ngModelChange)="dateChange($event)" hourCycle="12h">
+                <ion-radio-group class="fd-row" allowEmptySelection="true" slot="buttons">
+                  <ion-radio color="success" mode="md" (click)="toggleTime()" aria-checked="true"></ion-radio>
+                  &nbsp;&nbsp;
+                  <ion-label>Select Time</ion-label>
+                </ion-radio-group>
+              </ion-datetime>
+            </div>
+          </ion-accordion>
+          <ion-accordion value="third">
+            <ion-item slot="header" class="fs14">
+              <ion-label slot="start">Attendees</ion-label>
+              <ion-label slot="end" class="fd-row fs12">
+
+                <ng-container *ngIf="selectedPeople?.adult?.count > 0">
+                  <ion-icon id="person" name="human"></ion-icon>
+                  x {{selectedPeople?.adult?.count}}
+                </ng-container>
+                <ng-container *ngIf="selectedPeople?.child?.count > 0">
+                  &nbsp;
+
+                  <ion-icon id="person" name="child"></ion-icon>
+                  x {{selectedPeople?.child?.count}}
+                </ng-container>
+
+                <ng-container *ngIf="selectedPeople?.infant?.count > 0">
+                  &nbsp;
+                  <ion-icon id="person" name="infant"></ion-icon>
+                  x {{selectedPeople?.infant?.count}}
+                </ng-container>
+              </ion-label>
+            </ion-item>
+            <div class="mh245" slot="content">
+
+              <!-- Adults -->
+              <ion-item class="mv10" lines="none" class="fs14">
+                <ion-icon id="person" name="human"></ion-icon>
+                &nbsp;<span class="fs14 fw600">Adult</span>&nbsp; <span class="fs12 fw400 gray-text">(Age > 12)</span>
+                <div class="fd-row" slot="end">
+                  <ion-icon class="add-sub" (click)="sub('adult')" name="remove-circle-outline"></ion-icon>
+                  <span class="fs14 fw600 count">{{selectedPeople?.adult?.count}}</span>
+                  <ion-icon class="add-sub" (click)="add('adult')" name="add-circle-outline"></ion-icon>
+                </div>
+              </ion-item>
+
+              <!-- Childs -->
+              <ion-item class="mv10" lines="none" class="fs14">
+                <ion-icon id="person" name="child"></ion-icon>
+                &nbsp;<span class="fs14 fw600">Child</span>&nbsp; <span class="fs12 fw400 gray-text">(Age 3 - 12)</span>
+                <div class="fd-row" slot="end">
+                  <ion-icon class="add-sub" (click)="sub('child')" name="remove-circle-outline"></ion-icon>
+                  <span class="fs14 fw600 count">{{selectedPeople?.child?.count}}</span>
+                  <ion-icon class="add-sub" (click)="add('child')" name="add-circle-outline"></ion-icon>
+                </div>
+              </ion-item>
+
+              <!-- Infant -->
+              <ion-item class="mv10" lines="none" class="fs14">
+                <ion-icon id="person" name="infant"></ion-icon>
+                &nbsp;<span class="fs14 fw600">Infant</span>&nbsp; <span class="fs12 fw400 gray-text">(Age < 3)</span>
+                    <div class="fd-row" slot="end">
+                      <ion-icon class="add-sub" (click)="sub('infant')" name="remove-circle-outline"></ion-icon>
+                      <span class="fs14 fw600 count">{{selectedPeople?.infant?.count}}</span>
+                      <ion-icon class="add-sub" (click)="add('infant')" name="add-circle-outline"></ion-icon>
+                    </div>
+              </ion-item>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+        <div class="ion-padding">
+          <ion-button (click)="filterRes()"> Check wellbeings</ion-button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br />
+  <activities [activities]="acitivies"></activities>
+</ion-content>
