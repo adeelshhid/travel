@@ -25,6 +25,6 @@ export class CustomerInfoPage implements OnInit {
   ngOnInit() {
   }
 sendingReq(){
-    this.global.presentModal(SendingReservartionReqComponent,{})
+    this.global.presentModal(SendingReservartionReqComponent,{route:'dine-in'})
   }
 }

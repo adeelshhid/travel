@@ -26,7 +26,7 @@ export class BookNowPage implements OnInit {
   ngOnInit() {
   }
   sendingReq(){
-    this.global.presentModal(SendingReservartionReqComponent,{})
+    this.global.presentModal(SendingReservartionReqComponent,{route:'activity'})
   }
 
 }

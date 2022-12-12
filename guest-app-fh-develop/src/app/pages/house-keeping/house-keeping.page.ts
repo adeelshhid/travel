@@ -20,7 +20,6 @@ arr:Array<any>=[
 ]
 
   constructor(public global:GlobalService) { 
-    this.global.presentModal(TicketInfoComponent,{})
   }
 
   ngOnInit() {

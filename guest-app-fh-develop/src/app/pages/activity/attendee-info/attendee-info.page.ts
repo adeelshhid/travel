@@ -8,18 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./attendee-info.page.scss'],
 })
 export class AttendeeInfoPage implements OnInit {
-  firstName:string='';
-  lastName:string='';
-[x: string]: any;
-  attendeeInfo:FormGroup
-  constructor(private fb:FormBuilder,public global:GlobalService) { 
- this.attendeeInfo= this.fb.group({
+  firstName: string = '';
+  lastName: string = '';
+  [x: string]: any;
+  attendeeInfo: FormGroup
+  constructor(private fb: FormBuilder, public global: GlobalService) {
+    this.attendeeInfo = this.fb.group({
 
-fName:['',[Validators.required]],
-lName:['',[Validators.required]],
-age:[,Validators.required]
+      fName: ['', [Validators.required]],
+      lName: ['', [Validators.required]],
+      age: [, Validators.required]
 
- })
+    })
 
 
 
@@ -27,8 +27,9 @@ age:[,Validators.required]
 
   ngOnInit() {
   }
-  next(items){
-this.global.navigate('activity/book-now')
+
+  next(items) {
+    this.global.navigate('activity/book-now')
   }
 
 }

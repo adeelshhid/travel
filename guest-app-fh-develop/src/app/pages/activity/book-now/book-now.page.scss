@@ -67,7 +67,9 @@ ion-header {
         }
       }
       .corner-btn {
-        position: absolute;
+        position: relative;
+        margin: 0 -15px 0 0;
+        float: right;
         right: 0 !important;
         bottom: 0 !important;
         height: 120px;
@@ -79,7 +81,6 @@ ion-header {
         display: flex;
         align-items: center;
         white-space: normal;
-        text-transform: capitalize;
       }
     }
   }
