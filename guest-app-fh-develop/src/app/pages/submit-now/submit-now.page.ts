@@ -25,6 +25,6 @@ phone: ['', [Validators.required]],
   ngOnInit() {
   }
   sendingReq(){
-    this.global.presentModal(SendingReservartionReqComponent,{route:'wellbeing'})
+    this.global.presentModal(SendingReservartionReqComponent,{route:'house-keeping'})
   }
 }

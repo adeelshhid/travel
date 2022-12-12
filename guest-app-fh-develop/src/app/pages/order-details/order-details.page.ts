@@ -4,6 +4,7 @@ import { EditComponent } from '../../components/edit-reservation/edit-reservatio
 import { Router } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
+import { TicketInfoComponent } from 'src/app/components/ticket-info/ticket-info.component';
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.page.html',
@@ -12,9 +13,12 @@ import { Component, OnInit } from '@angular/core';
 export class OrderDetailsPage implements OnInit {
   public progress = 0;
   isConfirmed: boolean = false
-  isCompleted:boolean = false
-  constructor(private global: GlobalService, private ss:SocialSharing) {
+  isCompleted: boolean = false
+  route
+  constructor(private global: GlobalService, private ss: SocialSharing) {
 
+    this.route = this.global.getNavigationExtras()?.data?.route
+    console.log(this.route)
     const interval = setInterval(() => {
       this.progress += 0.0002;
       if (this.progress >= 0.5) {
@@ -40,15 +44,19 @@ export class OrderDetailsPage implements OnInit {
     }
   }
 
-  editRes(){
-    this.global.presentModal(EditComponent,{})
+  editRes() {
+    this.global.presentModal(EditComponent, {})
   }
 
-  contactUs(){
-    this.global.presentModal(ContactUsComponent,{})
+  contactUs() {
+    this.global.presentModal(ContactUsComponent, {})
   }
 
-  share(){
-    this.ss.share('Travel App','Test')
-    }
+  share() {
+    this.ss.share('Travel App', 'Test')
+  }
+
+  viewTickets(){
+      this.global.presentModal(TicketInfoComponent, {})
+  }
 }

@@ -15,7 +15,7 @@ export class ActivitiesComponent implements OnInit {
 
   ngOnInit() {}
   resDetails(data){
-
+this.global.closeModal()
 this.global.presentModal(ActivityDetailsComponent,data)
   }
 }

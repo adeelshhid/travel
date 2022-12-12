@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NavigationExtras } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { GlobalService } from 'src/app/services/global.service';
 })
 export class SendingReservationOutletComponent implements OnInit {
   isSent:boolean = false
+  @Input() data :any
   constructor(private global:GlobalService) { }
 
   ngOnInit() {}
@@ -23,7 +25,18 @@ export class SendingReservationOutletComponent implements OnInit {
   
   viewOrder(){
     this.global.closeModal()
+    if (this.data.route ==='wellbeing' ) {
+      let extras:NavigationExtras = {
+        state:{
+          data:this.data
+        }
+      }
+    this.global.navigateWithExtras('order-details',extras)
+    }else{
     this.global.navigate('outlet-details')
+
+    }
+
   }
 
 

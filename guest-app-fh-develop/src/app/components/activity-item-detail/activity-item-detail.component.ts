@@ -43,8 +43,8 @@ export class ActivityItemDetailComponent implements OnInit {
     this.selectedPeople[key].price += key === 'child' ? 200 : 300
     this.viewOrderBtn = true
   }
-  next(){
+  next() {
     this.global.closeModal()
-    this.global.presentModal(InstructionsComponent,{})
+    this.global.presentModal(InstructionsComponent, {})
   }
 }

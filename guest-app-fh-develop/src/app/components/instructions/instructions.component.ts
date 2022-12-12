@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructionsComponent implements OnInit {
 
-  constructor(public global:GlobalService) { }
+  constructor(public global: GlobalService) { }
 
-  ngOnInit() {}
-  next(){
-    this.global.closeModal()
-this.global.navigate('activity/attendee-info')
+  ngOnInit() { }
+  next() {
+    this.global.modalController.dismiss()
+    this.global.navigate('activity/attendee-info')
   }
 
 }

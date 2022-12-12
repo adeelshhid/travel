@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/house-keeping',
+    redirectTo: '/wellbeing',
     pathMatch: 'full'
   },
   {

@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectDateComponent implements OnInit {
   [x: string]: any;
-  constructor(public global:GlobalService) { }
+  constructor(public global: GlobalService) { }
 
-  ngOnInit() {}
-next(){
-  this.global.presentModal(SelectTicketComponent,{})
-}
+  ngOnInit() { }
+  next() {
+this.global.closeModal()
+    this.global.presentModal(SelectTicketComponent, {})
+  }
 }

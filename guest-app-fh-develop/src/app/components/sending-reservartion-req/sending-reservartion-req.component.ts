@@ -1,3 +1,4 @@
+import { NavigationExtras } from '@angular/router';
 import { GlobalService } from './../../services/global.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { TicketInfoComponent } from '../ticket-info/ticket-info.component';
@@ -20,16 +21,18 @@ export class SendingReservartionReqComponent implements OnInit {
   }
   gotIt() {
     this.global.closeModal()
-    this.global.navigate('dine-in')
+    this.global.navigate(this.data?.route)
   }
 
   viewOrder() {
     this.global.closeModal()
-    if (this.data?.route === 'activity') {
-      this.global.presentModal(TicketInfoComponent, {})
-    }else{
-      this.global.navigate('order-details')
+    let extras: NavigationExtras = {
+      state: {
+        data: this.data
+      }
     }
+    this.global.navigateWithExtras('order-details', extras)
+
   }
 
 }

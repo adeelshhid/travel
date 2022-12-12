@@ -1,7 +1,7 @@
 <ion-content>
   <div [ngClass]="isCompleted && !isConfirmed ? 'app-bg':'bg-dark'" class="header-div light-text">
     <ion-buttons slot="start" class="padding">
-      <ion-button routerLink="/dine-in" routerDirection="back">
+      <ion-button [routerLink]="'/'+route" routerDirection="back">
         <ion-icon slot="start" [ngClass]="isCompleted && !isConfirmed ? 'dark-text':'light-text' " name="chevron-back">
         </ion-icon>
       </ion-button>
@@ -45,6 +45,7 @@
           <ion-label class="mt10 fs14">Fri | Oct 30, 2022 at 6:15 PM
           </ion-label>
           <ion-label class="mt10 fs14">3 seats</ion-label>
+          <u *ngIf="route === 'activity'" (click)="viewTickets()" class="mt20 fw700">3 Tickets</u>
           <u (click)="share()" class="mt20 fw700">Share the order to others</u>
           <u class="fw700 mt20" (click)="editRes()">Edit / Cancel this reservation</u>
         </p>

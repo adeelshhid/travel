@@ -55,6 +55,7 @@ item: any;
     console.log(event)
   }
    dateSel(){
+this.global.closeModal()
     this.global.presentModal(SelectDateComponent,{})
   }
 

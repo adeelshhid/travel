@@ -89,6 +89,9 @@ ion-header,ion-toolbar {
   flex-direction: row !important;
   align-items: center !important;
 }
+ion-modal{
+  --backdrop-opacity: 0.6 !important;
+}
 #close-icon {
   position: absolute;
   right: 5px;
