@@ -1,0 +1,28 @@
+.main {
+    margin: 35% 2.5% 30% 2.5%;
+    height: 60%;
+    width: 95%;
+    background: #DFDFDB;
+    border-radius: 0px 0px 28px 4px;
+
+   .top-text{
+    max-width: 267px;
+   }
+   ion-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    ion-chip{
+        font-size: 10px;
+        background: #F2F2EF;;
+        height: 16px;
+        border-radius: 4px;
+        min-width:  41px;
+        max-width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+    
+    }
+   }
+  }

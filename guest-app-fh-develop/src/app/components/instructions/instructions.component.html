@@ -1,3 +1,22 @@
-<div class="my-custom-modal">
+<div class="main ion-padding">
+  <div class="top-text mt20 fs20 fw600">
+    Minimum requirement (8 people) is not matched.
+  </div>
 
+  <div class="fs14 fw400 dark-text mt20">
+    This ticket will be pending if you place the order, until the minimum guest
+    requirement is met.
+  </div>
+  <div class="fs14 fw400 dark-text mt20">
+    Please note, if the system has not received order requests number from other
+    guests to meet the minimum requirement 1 hour before the activity starts, we
+    will directly cancel your order. Would you like to continue?
+  </div>
+
+  <div class="fd-row mt100">
+    <ion-button fill="clear" class="dark-text">
+      Cancel
+    </ion-button>
+    <ion-button fill="clear" class="w100 fs14 fw600 dark-text"  id="btn-outline" (click)="next()"> Continue anyway </ion-button>
+  </div>
 </div>

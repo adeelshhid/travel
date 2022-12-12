@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: ActivityPage
+  },
+  {
+    path: 'attendee-info',
+    loadChildren: () => import('./attendee-info/attendee-info.module').then( m => m.AttendeeInfoPageModule)
+  },
+  {
+    path: 'book-now',
+    loadChildren: () => import('./book-now/book-now.module').then( m => m.BookNowPageModule)
   }
 ];
 

@@ -1,3 +1,5 @@
+import { TicketInfoComponent } from './../../components/ticket-info/ticket-info.component';
+import { InstructionsComponent } from './../../components/instructions/instructions.component';
 import { HItemDetailsComponent } from './../../components/h-item-details/h-item-details.component';
 import { GlobalService } from './../../services/global.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
@@ -17,7 +19,9 @@ arr:Array<any>=[
 
 ]
 
-  constructor(public global:GlobalService) { }
+  constructor(public global:GlobalService) { 
+    this.global.presentModal(TicketInfoComponent,{})
+  }
 
   ngOnInit() {
   }

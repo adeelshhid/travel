@@ -79,7 +79,7 @@ ion-header,ion-toolbar {
 .my-custom-modal {
   --height: 418px;
   --width: 345px;
-  --background: none;
+  --background: #DFDFDB !important;
 }
 .w100 {
   width: 100%;
@@ -166,7 +166,9 @@ ion-header,ion-toolbar {
 .mt30{
   margin-top: 30px;
 }
-
+.mt100{
+  margin-top: 100px;
+}
 .float-right {
   float: right;
 }

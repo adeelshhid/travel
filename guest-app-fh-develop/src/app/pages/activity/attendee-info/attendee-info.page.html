@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button  >
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label slot="start" class="dark-text fw600"> Attendee info</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<form [formGroup]="attendeeInfo">
+  <div class="outer-div ion-padding">
+    <div class="adult-div">
+      <ion-label class="fw700 fs14">Primary Attendee</ion-label>
+      <ion-chip  mode="ios">
+        <ion-label>Adult</ion-label>
+      </ion-chip>
+    </div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating" class="fs12">First Name</ion-label>
+          <ion-input type="text"  formControlName="fName" [(ngModel)]="firstName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating" class="fs12">Last Name</ion-label>
+          <ion-input type="text" formControlName="lName" [(ngModel)]="firstName"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    
+    <div class="child-div mt20">
+      <ion-label class="fw700 fs14">Attendee 02</ion-label>
+      <ion-chip  mode="ios">
+        <ion-label>child</ion-label>
+      </ion-chip>
+    </div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating" class="fs12">First Name</ion-label>
+          <ion-input type="text" formControlName="fName" [(ngModel)]="lastName"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating" class="fs12">Last Name</ion-label>
+          <ion-input type="text" formControlName="lName"  [(ngModel)]="lastName"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-label position="floating" class="fs12">Age</ion-label>
+          <ion-input type="number" formControlName="age"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+   
+    </div>
+  <div class="lst-btn">
+    <ion-button fill="clear" expand="block" class="dark-btn w100 light-text" [disabled]="!attendeeInfo.valid" (click)="next(items)">
+      Next
+     </ion-button>
+  </div>
+</form>
+</ion-content>

@@ -46,7 +46,7 @@
     </div>
     <ion-label class="item-end-label" slot="end">${{selectedPeople?.child?.price}}</ion-label>
   </ion-item>
-  <ion-button fill="clear" expand="block" class="dark-btn w100 light-text" *ngIf="viewOrderBtn">
+  <ion-button fill="clear" expand="block" class="dark-btn w100 light-text" *ngIf="viewOrderBtn" (click)="next()">
     Add {{selectedPeople?.adult?.count + selectedPeople?.child?.count}} to order &nbsp;<span class="gray-text">${{selectedPeople?.adult?.price + selectedPeople?.child?.price}}</span>
   </ion-button>
 </ion-footer>

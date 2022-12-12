@@ -1,3 +1,4 @@
+import { GlobalService } from 'src/app/services/global.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public global:GlobalService) { }
 
   ngOnInit() {}
+  next(){
+    this.global.closeModal()
+this.global.navigate('activity/attendee-info')
+  }
 
 }
