@@ -1,3 +1,4 @@
+import { InstructionsComponent } from './../instructions/instructions.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
 
@@ -42,5 +43,8 @@ export class ActivityItemDetailComponent implements OnInit {
     this.selectedPeople[key].price += key === 'child' ? 200 : 300
     this.viewOrderBtn = true
   }
-
+  next(){
+    this.global.closeModal()
+    this.global.presentModal(InstructionsComponent,{})
+  }
 }

@@ -1,3 +1,4 @@
+import { InstructionsComponent } from './instructions/instructions.component';
 import { ActivityItemDetailComponent } from './activity-item-detail/activity-item-detail.component';
 import { SelectTicketComponent } from './select-ticket/select-ticket.component';
 import { SelectDateComponent } from './select-date/select-date.component';
@@ -44,7 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ActivityDetailsComponent,
     SelectDateComponent,
     SelectTicketComponent,
-    ActivityItemDetailComponent
+    ActivityItemDetailComponent,
+    InstructionsComponent
   ],
   imports: [
     CommonModule,
@@ -70,7 +72,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ActivityDetailsComponent,
     SelectDateComponent,
     SelectTicketComponent,
-    ActivityItemDetailComponent
+    ActivityItemDetailComponent,
+    InstructionsComponent
   ],
 })
 export class ComponentsModule { }
