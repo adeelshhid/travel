@@ -20,13 +20,13 @@
     <ion-label class="fs20 fw400">{{data?.price}}</ion-label>
   </div>
 </ion-content>
-<ion-footer class="">
+<ion-footer class="ion-padding">
   <div class="icon-div">
     <ion-icon name="remove-circle-outline" (click)="sub('item')"></ion-icon>
     <span>{{selectedItems?.item?.count}}</span>
     <ion-icon name="add-circle-outline" (click)="add('item')"></ion-icon>
   </div>
-  <ion-button *ngIf="selectItem">
-    asas
+  <ion-button fill="clear" expand="block" class="dark-btn w100 light-text" *ngIf="selectItem">
+    Next
   </ion-button>
 </ion-footer>
