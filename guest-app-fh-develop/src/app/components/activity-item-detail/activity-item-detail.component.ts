@@ -7,32 +7,40 @@ import { GlobalService } from 'src/app/services/global.service';
   styleUrls: ['./activity-item-detail.component.scss'],
 })
 export class ActivityItemDetailComponent implements OnInit {
-  selectItem:any
-  selectedItems: any = {
-    item: {
-      count: 0
-    },
-  }
-  @Input() data:any
-  constructor(public global :GlobalService) {
-   }
+  viewOrderBtn: any
 
-  ngOnInit() {}
+  selectedPeople: any = {
+    adult: {
+      count: 0,
+      price: 0
+    },
+    child: {
+      count: 0,
+      price: 0
+    }
+  }
+  @Input() data: any
+  constructor(public global: GlobalService) {
+  }
+
+  ngOnInit() { }
 
 
   sub(key) {
-    if(this.selectedItems[key].count >= 1){
-      this.selectItem=true
-      this.selectedItems[key].count -= 1
+    if (this.selectedPeople[key].count >= 1) {
+      this.viewOrderBtn = true
+      this.selectedPeople[key].count -= 1
+      this.selectedPeople[key].price -= key === 'child' ? 200 : 300
     }
-    if (this.selectedItems[key].count == 0) {
-      this.selectItem=false
-      
+    if (this.selectedPeople['adult'].count == 0 && this.selectedPeople['child'].count == 0) {
+      this.viewOrderBtn = false
+
     }
   }
   add(key) {
-    this.selectedItems[key].count += 1
-    this.selectItem=true
+    this.selectedPeople[key].count += 1
+    this.selectedPeople[key].price += key === 'child' ? 200 : 300
+    this.viewOrderBtn = true
   }
 
 }
