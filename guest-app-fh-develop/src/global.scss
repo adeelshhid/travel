@@ -31,6 +31,10 @@ ion-content {
     text-transform: capitalize !important;
   }
 }
+ion-header,ion-toolbar {
+  background: #dfdfdb !important;
+  
+}
 
 @supports (-webkit-touch-callout: none) {
   ion-header {

@@ -13,8 +13,8 @@
     <div class="intro ion-padding">
       <div class="spb">
         <div>
-          <ion-chip >
-            <ion-label>{{data?.type}}</ion-label>
+          <ion-chip *ngFor="let type of data?.types">
+            <ion-label>{{type}}</ion-label>
           </ion-chip>
         </div>
         <ion-buttons>
