@@ -74,6 +74,8 @@ export class ActivityPage implements OnInit {
   filterRes() {
     let extras: NavigationExtras = {
       state: {
+        data:this.acitivies,
+        route:'../../activity'
       }
     }
     this.global.navigateWithExtras('/dine-in/results', extras)

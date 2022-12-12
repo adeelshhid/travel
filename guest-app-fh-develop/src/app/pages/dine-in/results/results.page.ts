@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsPage implements OnInit {
   filteredRes: Array<any> = []
+  route:string
   constructor(private global: GlobalService) {
     this.filteredRes = this.global.getNavigationExtras()?.data
+    this.route = this.global.getNavigationExtras()?.route
+    console.log(this.route)
   }
 
   ngOnInit() {

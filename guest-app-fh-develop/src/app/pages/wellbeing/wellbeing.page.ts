@@ -63,6 +63,8 @@ export class WellbeingPage implements OnInit {
   filterRes() {
     let extras: NavigationExtras = {
       state: {
+        data:this.resorts,
+        route:'../../wellbeing'
       }
     }
     this.global.navigateWithExtras('/dine-in/results', extras)

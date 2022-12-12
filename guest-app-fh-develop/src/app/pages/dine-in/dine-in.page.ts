@@ -88,7 +88,8 @@ export class DineInPage implements OnInit {
   filterRes() {
     let extras: NavigationExtras = {
       state: {
-        data: this.restaurants
+        data: this.restaurants,
+        route:'dine-in'
       }
     }
     this.global.navigateWithExtras('/dine-in/results', extras)
