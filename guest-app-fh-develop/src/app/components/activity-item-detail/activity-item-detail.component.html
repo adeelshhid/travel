@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="banner-img h30">
+    <img [src]="data?.img" alt="">
+    <ion-buttons>
+      <ion-button (click)="global.closeModal()">
+        <ion-icon color="light" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div *ngIf="data?.status" id="status">
+      {{data?.status}}
+    </div>
+  </div>
+  <div class="item-info ion-padding mt30">
+    <div>
+      <div class=" text ion-no-padding">
+        <b class="fs18 fw600 name">{{data?.title}}</b><br> <br>
+        <span class="fs14 fw400 gray-text ">{{data?.time}}</span>
+      </div>
+    </div>
+    <ion-label class="fs20 fw400">{{data?.price}}</ion-label>
+  </div>
+</ion-content>
+<ion-footer class="">
+  <div class="icon-div">
+    <ion-icon name="remove-circle-outline" (click)="sub('item')"></ion-icon>
+    <span>{{selectedItems?.item?.count}}</span>
+    <ion-icon name="add-circle-outline" (click)="add('item')"></ion-icon>
+  </div>
+  <ion-button *ngIf="selectItem">
+    asas
+  </ion-button>
+</ion-footer>

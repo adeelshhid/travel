@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-button >
+        <ion-icon class="dark-text" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-label slot="start" class="dark-text fw600"> Select your ticket</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class="ion-padding">
+<div class="item-detail mt30" *ngFor="let item of arr" (click)="itemDet(item)">
+  <div class="lbls-div">
+    <span class="grey-text fs14 fw600">{{item?.title}}</span>
+    <span class="mt10 red-text">
+     {{item?.status}}
+    </span>
+    <span class="fs12 fw700 grey-text">
+  {{item?.time}}
+    </span>
+    <span class="mt10 dark-text fs14" >
+      {{item?.price}}
+    </span>
+  </div>
+  <img [src]="item?.img" alt="">
+</div>
+
+  </div>
+</ion-content>

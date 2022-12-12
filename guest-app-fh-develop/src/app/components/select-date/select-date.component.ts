@@ -1,3 +1,5 @@
+import { SelectTicketComponent } from './../select-ticket/select-ticket.component';
+import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectDateComponent implements OnInit {
   [x: string]: any;
-  constructor() { }
+  constructor(public global:GlobalService) { }
 
   ngOnInit() {}
 next(){
-  
+  this.global.presentModal(SelectTicketComponent,{})
 }
 }
